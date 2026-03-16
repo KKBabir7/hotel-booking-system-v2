@@ -739,6 +739,15 @@
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12) !important;
 }
 
+.offer-content {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.offer-content:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
 .offer-image-wrapper {
     height: 220px;
     overflow: hidden;
@@ -895,6 +904,10 @@
 .offer-features {
     letter-spacing: 0.3px;
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.72rem; /* Slightly smaller than base but readable */
 }
 
 .rating-stars-wrapper .stars i {
@@ -1143,6 +1156,7 @@
     transform: translateX(3px);
     box-shadow: 0 4px 12px rgba(247, 97, 86, 0.15);
 }
+
 
 
 
