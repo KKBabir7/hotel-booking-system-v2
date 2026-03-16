@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Rooms - Nice Guest House</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  
+  
+
+  <!-- Flatpickr for Date Range -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- Pannellum for 360-degree view -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Slick Slider for consistency -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/root.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/resle.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+
+  <style>
+    /* Hero Section Overrides for Rooms Page */
+    .hero-rooms {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/cover/room.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 0 80px;
+      color: white;
+      text-align: center;
+    }
+    .hero-search-container{
+      margin-top: -60px;
+    }
+    @media (max-width: 991.98px) {
+    .hero-search-wrapper
+ {
+        margin-top: 15px !important;
+        width: 100%;
+        padding: 0 0px;
+    }
+}
+
+ @media (max-width: 492px) {
+.hero-rooms {
+     
+        padding: 95px 0 8px;
+ }}
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-md-4 transition-all" id="main-nav">
+    <div class="container-fluid px-md-5">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="navbar-logo">
+      </a>
+
+      <!-- Desktop Horizontal Menu -->
+      <div class="d-none d-lg-flex flex-grow-1 justify-content-end align-items-center desktop-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"><i class="bi bi-house-door me-1"></i> Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="restaurant.html" class="nav-link"><i class="bi bi-egg-fried me-1"></i> Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a href="conference.html" class="nav-link"><i class="bi bi-building me-1"></i> Conference Hall</a>
+          </li>
+          <li class="nav-item">
+            <a href="rooms.html" class="nav-link active"><i class="bi bi-door-closed me-1"></i> Rooms</a>
+          </li>
+        </ul>
+
+        <!-- Auth Button (dynamic via JS) -->
+        <div id="auth-btn-wrapper" class="d-flex align-items-center">
+          <div class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-1 p-0 overflow-hidden ps-3 pe-3">
+            <a href="signup.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-person-plus me-1"></i> Sign Up</a>
+            <span class="text-white-50">|</span>
+            <a href="signin.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
+          </div>
+        </div>
+
+        <!-- Desktop Dropdown Menu -->
+        <div class="dropdown desktop-dropdown d-none d-lg-block ms-2">
+          <button class="btn btn-menu-toggle animated-burger-btn" type="button" id="desktopMenuDropdown"
+            aria-expanded="false">
+            <div class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-3 mt-3 p-0"
+            aria-labelledby="desktopMenuDropdown">
+            <li><a class="dropdown-item py-2 px-4 " href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="our-clients.html"><i class="bi bi-people me-2"></i> Honorable Clients</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="contact.html"><i class="bi bi-envelope me-2"></i> Contact</a>
+            </li>
+            <li><a class="dropdown-item py-2 px-4" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a></li>
+            <li>
+              <hr class="dropdown-divider mx-3">
+            </li>
+            <li class="dropdown-submenu px-3">
+              <a class="dropdown-item dropdown-toggle py-2 px-2 d-flex align-items-center justify-content-between"
+                href="#" id="languageMenu">
+                <span><i class="bi bi-translate me-2"></i> Language</span>
+              </a>
+              <ul class="dropdown-menu shadow border-0 py-2 p-0">
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English"
+                      class="lang-flag me-2"> English</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali"
+                      class="lang-flag me-2"> Bengali</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi"
+                      class="lang-flag me-2"> Hindi</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center d-lg-none ms-auto gap-2">
+        <a href="rooms.html" class="btn-book-now-mobile"><i class="bi bi-door-open"></i> Book Now</a>
+        <button class="btn btn-menu-toggle animated-burger-btn" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-rooms">
+    <div class="container">
+      <h1 class="display-3 fw-bold mb-3">Explore Our Rooms</h1>
+      <!-- <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center">
+          <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+          <li class="breadcrumb-item active text-white" aria-current="page">Rooms</li>
+        </ol>
+      </nav> -->
+    </div>
+  </section>
+
+  <!-- Availability Bar (Home Style) -->
+  <section class="hero-search-section">
+    <div class="container relative-trigger-container">
+      <div class="hero-search-wrapper mx-auto mt-4 position-relative ">
+        <div class="hero-search-overlay">
+          <div class="hero-search-container d-flex align-items-center bg-white shadow-lg rounded-pill p-1 position-relative">
+            <!-- Mobile Close Button -->
+            <button class="btn btn-close d-none mobile-search-close" id="mobileSearchCloseRooms" aria-label="Close" style="position: absolute; right: 20px; top: 20px; z-index: 1051;"></button>
+        <!-- Where Section -->
+        <div class="search-item flex-grow-1 text-start px-4 py-2" id="search-where">
+          <div class="search-label fw-bold">Select Property</div>
+          <input type="text" class="search-input-field border-0 bg-transparent w-100 p-0" id="location-input"
+            placeholder="Choose Guest House" readonly autocomplete="off">
+          <button class="search-clear-btn d-none" id="clear-where">
+            <i class="bi bi-x"></i>
+          </button>
+
+          <!-- Location Suggestions Panel -->
+          <div class="search-panel location-panel shadow-lg rounded-4 d-none">
+            <div class="panel-header px-4 py-3 border-bottom">
+              <span class="text-muted small fw-bold uppercase">Suggested destinations</span>
+            </div>
+            <div class="panel-body py-2" id="location-results">
+              <!-- Property 1 -->
+              <div class="suggestion-item d-flex align-items-center px-4 py-3" data-location="Main Branch">
+                <div class="suggestion-icon me-3 bg-light rounded-3 p-2">
+                  <i class="bi bi-building text-primary"></i>
+                </div>
+                <div>
+                  <div class="suggestion-title fw-bold">Nice Guest House</div>
+                  <div class="suggestion-subtitle text-muted small">Uzzalpur, Maijdee Court</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="search-divider"></div>
+
+        <!-- When Section -->
+        <div class="search-item flex-grow-1 text-start px-4 py-2" id="search-when">
+          <div class="search-label fw-bold">Stay Period</div>
+          <div class="search-subtext text-muted small" id="date-display">Add dates</div>
+          <input type="text" id="date-range-picker" style="display: none;">
+          <button class="search-clear-btn d-none" id="clear-when">
+            <i class="bi bi-x"></i>
+          </button>
+        </div>
+
+        <div class="search-divider"></div>
+
+        <!-- Who Section -->
+        <div class="search-item flex-grow-1 text-start px-4 py-2 position-relative" id="search-who">
+          <div class="search-label fw-bold">Guests</div>
+          <div class="search-subtext text-muted small" id="guest-display">Add guests</div>
+          <button class="search-clear-btn d-none" id="clear-who">
+            <i class="bi bi-x"></i>
+          </button>
+
+          <!-- Guest Counter Panel -->
+          <div class="search-panel guest-panel shadow-lg rounded-4 d-none p-4">
+            <!-- Adult row -->
+            <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <div class="fw-bold">Adults</div>
+                <div class="text-muted small">Ages 13 or above</div>
+              </div>
+              <div class="counter-control d-flex align-items-center">
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus"
+                  data-type="adults"><i class="bi bi-dash"></i></button>
+                <span class="mx-3 fw-bold count-val" id="count-adults">0</span>
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus"
+                  data-type="adults"><i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+            <!-- Children row -->
+            <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <div class="fw-bold">Children</div>
+                <div class="text-muted small">Ages 2 – 12</div>
+              </div>
+              <div class="counter-control d-flex align-items-center">
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus"
+                  data-type="children"><i class="bi bi-dash"></i></button>
+                <span class="mx-3 fw-bold count-val" id="count-children">0</span>
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus"
+                  data-type="children"><i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+            <!-- Infants row -->
+            <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+              <div>
+                <div class="fw-bold">Infants</div>
+                <div class="text-muted small">Under 2</div>
+              </div>
+              <div class="counter-control d-flex align-items-center">
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus"
+                  data-type="infants"><i class="bi bi-dash"></i></button>
+                <span class="mx-3 fw-bold count-val" id="count-infants">0</span>
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus"
+                  data-type="infants"><i class="bi bi-plus"></i></button>
+              </div>
+            </div>
+            <!-- Pets row -->
+            <div class="guest-row d-flex align-items-center justify-content-between">
+              <div>
+                <div class="fw-bold">Pets</div>
+                <div class="text-muted small"><a href="#" class="text-decoration-underline text-muted">Bringing a
+                    service animal?</a></div>
+              </div>
+              <div class="counter-control d-flex align-items-center">
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus"
+                  data-type="pets"><i class="bi bi-dash"></i></button>
+                <span class="mx-3 fw-bold count-val" id="count-pets">0</span>
+                <button class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus" data-type="pets"><i
+                    class="bi bi-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn  rounded-circle search-submit-btn d-flex align-items-center justify-content-center">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="container py-3 py-md-5">
+    <div class="row">
+      <!-- Sidebar Filters (Desktop) & Offcanvas Trigger (Mobile) -->
+      <aside class="col-lg-3">
+        <div class="filter-header-actions d-lg-none d-flex gap-2">
+          <button class="btn btn-primary w-100 rounded-3 py-0 fw-bold shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" style="height: 40px;">
+            <i class="bi bi-filter-left me-2"></i> Filters
+          </button>
+          <button class="btn btn-primary ounded-3  btn-mobile-search shadow d-flex d-md-none" id="mobileSearchTriggerRooms" style="width: 50px; height: 40px; flex-shrink: 0; align-items: center; justify-content: center;">
+            <i class="bi bi-search text-white"></i>
+          </button>
+        </div>
+        
+        <!-- Desktop Sidebar (Hidden on mobile) -->
+        <div class="filter-sidebar d-none d-lg-block">
+          <div class="d-flex justify-content-between align-items-center mb-4 px-1">
+            <h5 class="mb-0 fw-bold">Filters</h5>
+            <button class="btn btn-link text-primary text-decoration-none p-0 small fw-bold" id="resetAllFilters">
+              <i class="bi bi-arrow-counterclockwise me-1"></i> Reset All
+            </button>
+          </div>
+          <div class="filter-section">
+            <h5 class="filter-title">Price Range</h5>
+            <div class="dual-range-container">
+              <div class="range-inputs">
+                <div class="range-input-box">
+                  <label>Min</label>
+                  <div class="price-input-wrapper">
+                    <span class="currency-prefix">$</span>
+                    <input type="number" id="minPriceInput" value="0" min="0" max="1000" step="10">
+                  </div>
+                </div>
+                <div class="range-divider">-</div>
+                <div class="range-input-box">
+                  <label>Max</label>
+                  <div class="price-input-wrapper">
+                    <span class="currency-prefix">$</span>
+                    <input type="number" id="maxPriceInput" value="1000" min="0" max="1000" step="10">
+                  </div>
+                </div>
+              </div>
+              <div class="slider-container">
+                <div class="slider-track"></div>
+                <input type="range" id="minPriceRange" min="0" max="1000" value="0" step="10">
+                <input type="range" id="maxPriceRange" min="0" max="1000" value="1000" step="10">
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="filter-section">
+            <h5 class="filter-title">Special Offers</h5>
+            <div class="filter-list">
+              <div class="filter-item">
+                <input type="checkbox" id="offer-discount">
+                <label for="offer-discount">Discount Items</label>
+                <span class="count">4</span>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="filter-section">
+            <h5 class="filter-title">Room Exclusives</h5>
+            <div class="filter-list">
+              <div class="filter-item">
+                <input type="checkbox" id="badge-genius">
+                <label for="badge-genius">Genius Exclusive</label>
+                <span class="count">2</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="badge-top">
+                <label for="badge-top">Top Pick</label>
+                <span class="count">4</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="badge-new">
+                <label for="badge-new">New Luxury</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="badge-early">
+                <label for="badge-early">Early 2026 Deal</label>
+                <span class="count">2</span>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="filter-section">
+            <h5 class="filter-title">Room Types</h5>
+            <div class="filter-list">
+              <div class="filter-item">
+                <input type="checkbox" id="type-ac-deluxe">
+                <label for="type-ac-deluxe">AC Deluxe</label>
+                <span class="count">4</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-ac-room">
+                <label for="type-ac-room">AC Room</label>
+                <span class="count">4</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-ac-single">
+                <label for="type-ac-single">AC Single</label>
+                <span class="count">2</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-business">
+                <label for="type-business">Business Class</label>
+                <span class="count">3</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-double-deluxe">
+                <label for="type-double-deluxe">Double Deluxe</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-exec-deluxe">
+                <label for="type-exec-deluxe">Executive Deluxe</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-exec-suite">
+                <label for="type-exec-suite">Executive Suite</label>
+                <span class="count">3</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-family-deluxe">
+                <label for="type-family-deluxe">Family Deluxe</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-nonac-luxury">
+                <label for="type-nonac-luxury">Non AC Luxury</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-nonac-single">
+                <label for="type-nonac-single">Non AC Single</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-super-deluxe">
+                <label for="type-super-deluxe">Super Deluxe</label>
+                <span class="count">1</span>
+              </div>
+              <div class="filter-item">
+                <input type="checkbox" id="type-vip-deluxe">
+                <label for="type-vip-deluxe">VIP Deluxe</label>
+                <span class="count">1</span>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="filter-section">
+            <h5 class="filter-title">Review Score</h5>
+            <div class="filter-list rating-filter-list">
+              <div class="filter-item rating-filter-item" data-rating="5">
+                <input type="checkbox" id="review-5">
+                <label for="review-5" class="d-flex align-items-center justify-content-between w-100">
+                  <span class="stars text-warning me-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </span>
+                  <span class="count">0</span>
+                </label>
+              </div>
+              <div class="filter-item rating-filter-item" data-rating="4">
+                <input type="checkbox" id="review-4">
+                <label for="review-4" class="d-flex align-items-center justify-content-between w-100">
+                  <span class="stars text-warning me-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  </span>
+                  <span class="count">0</span>
+                </label>
+              </div>
+              <div class="filter-item rating-filter-item" data-rating="3">
+                <input type="checkbox" id="review-3">
+                <label for="review-3" class="d-flex align-items-center justify-content-between w-100">
+                  <span class="stars text-warning me-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </span>
+                  <span class="count">0</span>
+                </label>
+              </div>
+              <div class="filter-item rating-filter-item" data-rating="2">
+                <input type="checkbox" id="review-2">
+                <label for="review-2" class="d-flex align-items-center justify-content-between w-100">
+                  <span class="stars text-warning me-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </span>
+                  <span class="count">0</span>
+                </label>
+              </div>
+              <div class="filter-item rating-filter-item" data-rating="1">
+                <input type="checkbox" id="review-1">
+                <label for="review-1" class="d-flex align-items-center justify-content-between w-100">
+                  <span class="stars text-warning me-2">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </span>
+                  <span class="count">0</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+        </div>
+      </aside>
+
+      <!-- Room Grid -->
+      <main class="col-lg-9 mt-0 mt-lg-0">
+        <div class="results-header d-flex justify-content-between align-items-center mb-3">
+          <p class="mb-0 text-muted showing-text-mobile">Showing <strong>8</strong> results</p>
+          <div class="d-flex align-items-center gap-2 gap-md-3">
+            <span class="small text-muted d-none d-md-inline">Sort By:</span>
+            <select class="sort-select" id="sortRooms">
+              <option value="newest">Newest First</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row g-4 rooms-grid">
+          <!-- Room Card 1 (NON-360 EARLY DEAL) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-deluxe" data-price="299">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                <div class="offer-badge early-deal">Early 2026 Deal</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Oceanfront Infinity Villa</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Maldives, Indian Ocean</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(9.8 · 120 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 6 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 3 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">03/19 - 03/23</span>
+                      <span class="extra-small">4 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$350</div>
+                      <div class="price-current fw-bold text-dark">$299</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 2 (360 GENIUS) -->
+          <div class="col-lg-4 col-md-6" data-room-type="business" data-price="450">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop', 'Metropolitan Sky Penthouse')">
+                <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80" alt="Penthouse" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop', 'Metropolitan Sky Penthouse')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge genius">Genius Exclusive</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Metropolitan Sky Penthouse</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> New York, USA</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.8 · 85 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 4 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 2 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">03/19 - 03/23</span>
+                      <span class="extra-small">4 nights, 4 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$520</div>
+                      <div class="price-current fw-bold text-dark">$450</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 3 (NON-360 EARLY DEAL) -->
+          <div class="col-lg-4 col-md-6" data-room-type="exec-suite" data-price="320">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800&q=80" alt="Chalet" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                <div class="offer-badge early-deal">Early 2026 Deal</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Alpine Peaks Luxury Chalet</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Zermatt, Switzerland</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(0.0 · 0 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 8 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 4 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">04/10 - 04/15</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area text-end">
+                    <div class="price-current fw-bold text-dark h5 mb-0">$320</div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 4 (360 TOP PICK) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-single" data-price="180">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://pannellum.org/images/b桜.jpg', 'Cherry Blossom Suite')">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://pannellum.org/images/b桜.jpg', 'Cherry Blossom Suite')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge top-pick">Top Pick</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Cherry Blossom Suite</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Tokyo, Japan</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.7 · 92 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">05/02 - 05/05</span>
+                      <span class="extra-small">3 nights, 1 adult</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$180</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 5 (360 NEW LUXURY) -->
+          <div class="col-lg-4 col-md-6" data-room-type="exec-deluxe" data-price="250">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://pannellum.org/images/cerro-tololo.jpg', 'Skyline Executive Haven')">
+                <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Executive Room" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://pannellum.org/images/cerro-tololo.jpg', 'Skyline Executive Haven')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge new-luxury">New Luxury</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Skyline Executive Haven</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> London, UK</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(4.9 · 42 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 3 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">06/15 - 06/20</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$250</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 6 (360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="double-deluxe" data-price="210">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://pannellum.org/images/jfk.jpg', 'Urban Oasis Double')">
+                <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="Double Room" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://pannellum.org/images/jfk.jpg', 'Urban Oasis Double')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge top-pick">Top Pick</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Urban Oasis Double</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Paris, France</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(4.6 · 210 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-3">
+                  <span><i class="bi bi-people me-1"></i> 4 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 2 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">06/15 - 06/20</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$210</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 7 (360 TOP PICK) -->
+          <div class="col-lg-4 col-md-6" data-room-type="exec-suite" data-price="240">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80', 'Nice Guest House VIP Room')">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="VIP Room" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80', 'Nice Guest House VIP Room')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge top-pick">Top Pick</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Nice Guest House VIP Room</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Noakhali, Bangladesh</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(4.9 · 450 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">08/12 - 08/14</span>
+                      <span class="extra-small">2 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$240</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 8 (360 GENIUS) -->
+          <div class="col-lg-4 col-md-6" data-room-type="exec-suite" data-price="310">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative" onclick="open3DViewer('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80', 'Coastal Sunset Suite')">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="Sunset Suite" class="offer-img w-100">
+                <div class="orbit-360-container">
+                  <div class="orbit-360-outer"></div>
+                  <div class="orbit-360-system">
+                    <div class="orbit-ring one"></div>
+                    <div class="orbit-ring two"></div>
+                  </div>
+                  <div class="orbit-label">360°</div>
+                </div>
+                <div class="view-360-overlay"></div>
+                <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
+                <button class="image-360-btn" onclick="event.stopPropagation(); open3DViewer('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80', 'Coastal Sunset Suite')">
+                  <i class="bi bi-arrow-repeat"></i>
+                </button>
+                <div class="offer-badge genius">Genius Exclusive</div>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Coastal Sunset Suite</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Santorini, Greece</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(4.8 · 180 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">09/20 - 09/25</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$400</div>
+                      <div class="price-current fw-bold text-dark">$310</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 9 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="business" data-price="150">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=800&q=80" alt="Business Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Executive Business Studio</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Singapore City</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.5 · 310 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">07/01 - 07/03</span>
+                      <span class="extra-small">2 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$200</div>
+                      <div class="price-current fw-bold text-dark">$150</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 10 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-deluxe" data-price="120">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1590490359683-658d3d23f972?auto=format&fit=crop&w=800&q=80" alt="AC Deluxe" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Standard AC Deluxe</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Bangkok, Thailand</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(4.2 · 156 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">10/22 - 10/24</span>
+                      <span class="extra-small">2 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$120</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 11 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="family-deluxe" data-price="350">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80" alt="Family Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Grand Family Deluxe</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Orlando, USA</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.8 · 94 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 6 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 3 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">12/15 - 12/22</span>
+                      <span class="extra-small">7 nights, 4 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$350</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 12 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="nonac-luxury" data-price="95">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1562438668-bcf0ca6578f0?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Eco-Friendly Luxury Cabin</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Bali, Indonesia</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(4.9 · 21 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">11/05 - 11/10</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$120</div>
+                      <div class="price-current fw-bold text-dark">$95</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 13 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="super-deluxe" data-price="420">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80" alt="Super Deluxe" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Imperial Super Deluxe</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Las Vegas, USA</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(5.0 · 12 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 4 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 2 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">01/05 - 01/09</span>
+                      <span class="extra-small">4 nights, 4 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$500</div>
+                      <div class="price-current fw-bold text-dark">$420</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 14 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="vip-deluxe" data-price="800">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" alt="VIP Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Presidencial VIP Haven</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Zurich, Switzerland</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <div class="card-review-text">(5.0 · 3 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">02/10 - 02/12</span>
+                      <span class="extra-small">2 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$800</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 15 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="exec-suite" data-price="260">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Corporate Executive Suite</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Berlin, Germany</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.7 · 112 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">03/15 - 03/20</span>
+                      <span class="extra-small">5 nights, 1 adult</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$300</div>
+                      <div class="price-current fw-bold text-dark">$260</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 16 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-deluxe" data-price="190">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Coastal AC Deluxe</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Phuket, Thailand</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.6 · 45 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">04/05 - 04/08</span>
+                      <span class="extra-small">3 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$190</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 17 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="business" data-price="220">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Loft Business Suite</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Seoul, South Korea</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  </div>
+                  <div class="card-review-text">(4.8 · 28 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">05/10 - 05/15</span>
+                      <span class="extra-small">5 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$310</div>
+                      <div class="price-current fw-bold text-dark">$220</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 18 (NON-360) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-room" data-price="135">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Modern Standard AC</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Hanoi, Vietnam</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(0.0 · 0 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">12/01 - 12/05</span>
+                      <span class="extra-small">4 nights, 2 adults</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-old text-muted extra-small">$180</div>
+                      <div class="price-current fw-bold text-dark">$135</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 19 (UNRATED) -->
+          <div class="col-lg-4 col-md-6" data-room-type="ac-single" data-price="85">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Quiet Garden Single</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Noakhali, Bangladesh</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(0.0 · 0 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 1 Sleep</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">05/01 - 05/03</span>
+                      <span class="extra-small">2 nights, 1 adult</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$85</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 20 (UNRATED) -->
+          <div class="col-lg-4 col-md-6" data-room-type="nonac-single" data-price="45">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+              <div class="offer-image-wrapper position-relative">
+                <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=800&q=80" alt="Room" class="offer-img w-100">
+                <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              </div>
+              <div class="offer-content p-3">
+                <h5 class="offer-title fw-bold mb-1">Budget Essential Single</h5>
+                <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Dhaka, Bangladesh</p>
+                <div class="card-review-row">
+                  <div class="card-review-stars text-warning">
+                    <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i>
+                  </div>
+                  <div class="card-review-text">(0.0 · 0 reviews)</div>
+                </div>
+                <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                  <span><i class="bi bi-people me-1"></i> 1 Sleep</span>
+                  <span>·</span>
+                  <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                </div>
+                <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                  <div class="offer-action-left">
+                    <div class="stay-info">
+                      <span class="stay-dates">06/10 - 06/12</span>
+                      <span class="extra-small">2 nights, 1 adult</span>
+                    </div>
+                  </div>
+                  <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                    <div class="pricing-flex">
+                      <div class="price-current fw-bold text-dark">$45</div>
+                    </div>
+                    <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <nav class="mt-5">
+          <ul class="pagination justify-content-center" id="rooms-pagination">
+            <!-- Dynamically populated by rooms.js -->
+          </ul>
+        </nav>
+      </main>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 pt-5">
+        <!-- Branding column -->
+        <div class="col-lg-4">
+          <a href="#" class="footer-logo">NICE<span>GUESTHOUSE</span></a>
+          <p class="text-white-50 mb-4 pe-lg-4">
+            Committed to serving you with our expert team members. Experience a touch of home and excellence in the
+            heart of Noakhali since 2007.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/NGHNOAKHALI" class="social-link" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=2fpsh9s6ebM" class="social-link" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g6602003-d4764267-Reviews-Nice_Guest_House_Training_Hall_and_Dolna_Food_Heaven-Noakhali_Chittagong_Division.html" class="social-link" target="_blank"><i class="fa fa-tripadvisor"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Navigate</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="restaurant.html">Restaurants</a></li>
+            <li><a href="conference.html">Conference</a></li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Useful Info</h5>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div class="col-md-6 col-lg-4">
+          <h5 class="footer-heading">Stay Connected</h5>
+          <p class="text-white-50 mb-4">Subscribe to our newsletter for latest offers and news.</p>
+          <div class="input-group">
+            <input type="email" class="form-control bg-dark border-0 text-white" placeholder="Enter email"
+              style="padding: 12px 20px;">
+            <button class="btn btn-primary px-4" type="button">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; 2026 Nice Guest House & Training Hall. All rights reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed for Excellence | Powered by <a href="#" class="text-white-50 text-decoration-none">NGH Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Off-canvas Mobile Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header border-bottom">
+      <div class="offcanvas-title" id="offcanvasMenuLabel">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="offcanvas-logo">
+      </div>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="p-3 border-bottom" id="mobile-auth-section">
+        <div class="row g-2">
+          <div class="col-6">
+            <a href="signup.html" class="btn btn-primary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-person-plus me-1"></i> Sign Up
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="signin.html" class="btn btn-outline-secondary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+            </a>
+          </div>
+        </div>
+      </div>
+      <ul class="nav flex-column menu-list">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conference.html"><i class="bi bi-building me-2"></i> Conference Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="rooms.html"><i class="bi bi-door-closed me-2"></i> Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="restaurant.html"><i class="bi bi-egg-fried me-2"></i> Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="our-clients.html"><i class="bi bi-people me-2"></i> Our Honorable Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+            href="#mobileLangMenu" role="button" aria-expanded="false" aria-controls="mobileLangMenu">
+            <span><i class="bi bi-translate me-2"></i> Language</span>
+            <i class="bi bi-chevron-down small"></i>
+          </a>
+          <div class="collapse" id="mobileLangMenu">
+            <ul class="nav flex-column bg-light ps-4">
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-flag me-2"> English</a></li>
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali" class="lang-flag me-2"> Bengali</a></li>
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi" class="lang-flag me-2"> Hindi</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item" id="mobile-signout-item" style="display:none;">
+          <a class="nav-link text-danger fw-bold" id="mobileSignOut" href="#"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3D 360 Viewer Modal -->
+  <div class="modal fade" id="viewer3DModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content border-0 bg-dark overflow-hidden">
+        <div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div id="panorama-container" style="width: 100%; height: 75vh;"></div>
+          <div class="viewer-info p-3 text-white">
+            <h5 class="mb-0 fw-bold" id="viewerHallTitle">Room 360° View</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter Offcanvas (Mobile) -->
+  <div class="offcanvas offcanvas-left h-100 rounded-top-4" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
+    <div class="offcanvas-header border-bottom px-4">
+      <h5 class="offcanvas-title fw-bold" id="filterOffcanvasLabel">Filters</h5>
+      <div class="d-flex align-items-center justify-content-end w-100 gap-3">
+        <button class="btn btn-link text-primary text-decoration-none p-0 small fw-bold" id="resetAllFiltersMobile"><i class="bi bi-arrow-counterclockwise me-1"></i> Reset All</button>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="offcanvas-body p-1">
+      <div id="offcanvasFilterContent">
+        <!-- Content will be moved here via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/rooms.js"></script>
+</body>
+
+</html>

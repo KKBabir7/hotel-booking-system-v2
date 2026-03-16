@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference & Training | Nice Guest House</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  
+
+  <!-- Flatpickr for Date Range -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <!-- Pannellum for 360-degree view -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/root.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/conference.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-md-4 transition-all" id="main-nav">
+    <div class="container-fluid px-md-5">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="navbar-logo">
+      </a>
+
+      <!-- Desktop Horizontal Menu -->
+      <div class="d-none d-lg-flex flex-grow-1 justify-content-end align-items-center desktop-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"><i class="bi bi-house-door me-1"></i> Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="restaurant.html" class="nav-link"><i class="bi bi-egg-fried me-1"></i> Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a href="conference.html" class="nav-link active"><i class="bi bi-building me-1"></i> Conference Hall</a>
+          </li>
+          <li class="nav-item">
+            <a href="rooms.html" class="nav-link"><i class="bi bi-door-closed me-1"></i> Rooms</a>
+          </li>
+        </ul>
+
+        <!-- Auth Button (dynamic via JS) -->
+        <div id="auth-btn-wrapper" class="d-flex align-items-center">
+          <div class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-1 p-0 overflow-hidden ps-3 pe-3">
+            <a href="signup.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-person-plus me-1"></i> Sign Up</a>
+            <span class="text-white-50">|</span>
+            <a href="signin.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
+          </div>
+        </div>
+
+        <!-- Desktop Dropdown Menu -->
+        <div class="dropdown desktop-dropdown d-none d-lg-block ms-2">
+          <button class="btn btn-menu-toggle animated-burger-btn" type="button" id="desktopMenuDropdown"
+            aria-expanded="false">
+            <div class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-3 mt-3 p-0"
+            aria-labelledby="desktopMenuDropdown">
+            <li><a class="dropdown-item py-2 px-4 " href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="our-clients.html"><i class="bi bi-people me-2"></i> Honorable Clients</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="contact.html"><i class="bi bi-envelope me-2"></i> Contact</a>
+            </li>
+            <li><a class="dropdown-item py-2 px-4" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a></li>
+            <li>
+              <hr class="dropdown-divider mx-3">
+            </li>
+            <li class="dropdown-submenu px-3">
+              <a class="dropdown-item dropdown-toggle py-2 px-2 d-flex align-items-center justify-content-between"
+                href="#" id="languageMenu">
+                <span><i class="bi bi-translate me-2"></i> Language</span>
+              </a>
+              <ul class="dropdown-menu shadow border-0 py-2 p-0">
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English"
+                      class="lang-flag me-2"> English</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali"
+                      class="lang-flag me-2"> Bengali</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi"
+                      class="lang-flag me-2"> Hindi</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center d-lg-none ms-auto gap-2">
+        <a href="rooms.html" class="btn-book-now-mobile"><i class="bi bi-door-open"></i> Book Now</a>
+        <button class="btn btn-menu-toggle animated-burger-btn" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Premium Hero Section -->
+  <header class="conference-hero">
+    <div class="conference-hero-content container">
+      <span class="conference-hero-tagline" data-aos="fade-up">Elite Corporate Venues</span>
+      <h1 class="conference-hero-title" data-aos="fade-up" data-aos-delay="100">Nice Guest House &<br>Training Hall</h1>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hall Overview Cards -->
+    <div class="container hall-grid">
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-4 col-md-6">
+          <div class="hall-card-premium">
+            <div class="hall-image-wrapper" onclick="open3DViewer('https://pannellum.org/images/jfk.jpg', 'Ground Floor Executive Hall')">
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80" alt="Executive Hall" class="hall-card-img">
+              <button class="wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)">
+                <i class="bi bi-heart"></i>
+              </button>
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+            </div>
+            <div class="hall-card-content">
+              <h3>Ground Floor Executive Hall</h3>
+              <div class="hall-meta">
+                <span class="hall-pax"><i class="bi bi-people-fill me-2"></i>Up to 50 Persons</span>
+                <span class="badge bg-light text-dark rounded-pill px-3">VIP Suite</span>
+              </div>
+              <p class="hall-desc-premium">An elegant, accessible space designed for board meetings, high-stakes negotiations, and intimate corporate gatherings with bespoke service.</p>
+              <a href="#conferenceBookingForm" class="btn btn-outline-primary rounded-pill mt-auto hall-btn">Inquire Availability</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="hall-card-premium">
+            <div class="hall-image-wrapper" onclick="open3DViewer('https://pannellum.org/images/cerro-tololo.jpg', '3rd Floor Grand Ballroom')">
+              <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80" alt="Grand Ballroom" class="hall-card-img">
+              <button class="wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)">
+                <i class="bi bi-heart"></i>
+              </button>
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+            </div>
+            <div class="hall-card-content">
+              <h3>3rd Floor Grand Ballroom</h3>
+              <div class="hall-meta">
+                <span class="hall-pax"><i class="bi bi-people-fill me-2"></i>Up to 100 Persons</span>
+                <span class="badge bg-light text-dark rounded-pill px-3">State-of-the-Art</span>
+              </div>
+              <p class="hall-desc-premium">Our most versatile venue, featuring advanced acoustic engineering and modular layouts, perfect for large-scale symposiums and workshops.</p>
+              <a href="#conferenceBookingForm" class="btn btn-outline-primary rounded-pill mt-auto hall-btn">Inquire Availability</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="hall-card-premium">
+            <div class="hall-image-wrapper" onclick="open3DViewer('https://pannellum.org/images/b桜.jpg', '7th Floor Skyline Summit')">
+              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Skyline Summit" class="hall-card-img">
+              <button class="wishlist-btn" onclick="event.stopPropagation(); toggleWishlist(this)">
+                <i class="bi bi-heart"></i>
+              </button>
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+            </div>
+            <div class="hall-card-content">
+              <h3>7th Floor Skyline Summit</h3>
+              <div class="hall-meta">
+                <span class="hall-pax"><i class="bi bi-people-fill me-2"></i>Up to 40 Persons</span>
+                <span class="badge bg-light text-dark rounded-pill px-3">Scenic Views</span>
+              </div>
+              <p class="hall-desc-premium">Elevate your experience in this exclusive skyline venue. Offering panoramic city views and a private terrace for executive sessions.</p>
+              <a href="#conferenceBookingForm" class="btn btn-outline-primary rounded-pill mt-auto hall-btn">Inquire Availability</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Suitability Section -->
+    <section class="suitability-section py-header bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5 flex-row-reverse">
+          <div class="col-lg-6">
+            <div class="modern-section-header mt-4">
+              <span class="section-label">Versatility</span>
+              <h2 class="modern-section-title">Designed for Every Significant Moment.</h2>
+              <p class="text-muted mt-3">From high-level corporate strategies to celebration of milestones, our halls adapt to your vision with seamless precision.</p>
+            </div>
+            <div class="premium-icon-grid">
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-briefcase"></i></div>
+                <span class="icon-text-modern">Board Meetings</span>
+              </div>
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-globe"></i></div>
+                <span class="icon-text-modern">Conferences</span>
+              </div>
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-people"></i></div>
+                <span class="icon-text-modern">Retreats</span>
+              </div>
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-award"></i></div>
+                <span class="icon-text-modern">Trainings</span>
+              </div>
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-calendar-heart"></i></div>
+                <span class="icon-text-modern">Weddings</span>
+              </div>
+              <div class="icon-item-modern">
+                <div class="icon-circle-modern"><i class="bi bi-megaphone"></i></div>
+                <span class="icon-text-modern">Exhibitions</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-showcase-container">
+              <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1200&q=80" alt="Venue Layout" class="img-fluid">
+              <div class="image-overlay-card d-none d-md-flex">
+                <span>Theater Style Arrangement</span>
+                <i class="bi bi-arrow-right-circle fs-3 text-primary"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities & Booking Section -->
+    <section class="facilities-section py-5 mb-5 bg-white">
+      <div class="container">
+        <div class="row g-5">
+          <!-- Left: Facilities Grid -->
+          <div class="col-lg-8">
+            <div class="modern-section-header">
+              <span class="section-label">Infrastructure</span>
+              <h2 class="modern-section-title">World-Class Excellence<br>Included as Standard.</h2>
+            </div>
+            
+            <div class="row row-cols-md-2 row-cols-1 g-4">
+              <div class="col">
+                <div class="icon-item-modern p-4">
+                  <div class="icon-circle-modern bg-primary-subtle border-0"><i class="bi bi-display"></i></div>
+                  <div class="ms-1">
+                    <h6 class="fw-bold mb-1">Advanced A/V</h6>
+                    <p class="extra-small text-muted mb-0">4K LCD Displays & HDR Projectors</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="icon-item-modern p-4">
+                  <div class="icon-circle-modern bg-primary-subtle border-0"><i class="bi bi-wifi"></i></div>
+                  <div class="ms-1">
+                    <h6 class="fw-bold mb-1">Gigabit Connectivity</h6>
+                    <p class="extra-small text-muted mb-0">Dedicated high-speed enterprise WiFi</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="icon-item-modern p-4">
+                  <div class="icon-circle-modern bg-primary-subtle border-0"><i class="bi bi-volume-up"></i></div>
+                  <div class="ms-1">
+                    <h6 class="fw-bold mb-1">Stereo Sound</h6>
+                    <p class="extra-small text-muted mb-0">Integrated ceiling-mounted audio system</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="icon-item-modern p-4">
+                  <div class="icon-circle-modern bg-primary-subtle border-0"><i class="bi bi-cup-hot"></i></div>
+                  <div class="ms-1">
+                    <h6 class="fw-bold mb-1">Catering Ready</h6>
+                    <p class="extra-small text-muted mb-0">On-site gourmet refreshments available</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="image-showcase-container mt-5">
+              <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=80" alt="Conference Layout" class="img-fluid">
+            </div>
+          </div>
+
+          <!-- Right: Professional Booking Card -->
+          <div class="col-lg-4">
+            <div class="booking-card-modern sticky-top" style="top: 120px;">
+              <div class="booking-header-modern mb-4">
+                <h4>Plan Your Event</h4>
+                <p class="small text-muted">Receive a tailored proposal from our experts.</p>
+              </div>
+              
+              <form id="conferenceBookingForm">
+                <div class="mb-4">
+                  <label class="form-label small fw-bold text-uppercase letter-spacing-1">Select Hall</label>
+                  <select class="form-select border-0 bg-light rounded-4 py-3 px-4 shadow-none" id="hallSelect">
+                    <option selected disabled>Choose a hall...</option>
+                    <option value="ground">Ground Floor Executive</option>
+                    <option value="3rd">3rd Floor Grand Ballroom</option>
+                    <option value="7th">7th Floor Skyline Summit</option>
+                  </select>
+                </div>
+                
+                <div class="mb-4">
+                  <label class="form-label small fw-bold text-uppercase letter-spacing-1">Date of Event</label>
+                  <input type="text" id="conf-date" class="form-control" placeholder="Select a date">
+                </div>
+
+                <div class="mb-4">
+                  <label class="form-label small fw-bold text-uppercase letter-spacing-1">Expected Guests</label>
+                  <input type="number" class="form-control border-0 bg-light rounded-4 py-3 px-4 shadow-none" placeholder="Enter count">
+                </div>
+
+                <button type="submit" class="booking-btn-premium w-100 mb-4">
+                  Reserve Conference Booking
+                </button>
+                
+                <div class="text-center">
+                  <span class="badge bg-success-subtle text-success rounded-pill px-3 py-2 extra-small">
+                    <i class="bi bi-shield-check me-1"></i> Swift 2-Hour Response Time
+                  </span>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 pt-5">
+        <!-- Branding column -->
+        <div class="col-lg-4">
+          <a href="#" class="footer-logo">NICE<span>GUESTHOUSE</span></a>
+          <p class="text-white-50 mb-4 pe-lg-4">
+            Committed to serving you with our expert team members. Experience a touch of home and excellence in the
+            heart of Noakhali since 2007.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/NGHNOAKHALI" class="social-link" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=2fpsh9s6ebM" class="social-link" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g6602003-d4764267-Reviews-Nice_Guest_House_Training_Hall_and_Dolna_Food_Heaven-Noakhali_Chittagong_Division.html" class="social-link" target="_blank"><i class="fa fa-tripadvisor"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Navigate</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="restaurant.html">Restaurants</a></li>
+            <li><a href="conference.html">Conference</a></li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Useful Info</h5>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div class="col-md-6 col-lg-4">
+          <h5 class="footer-heading">Stay Connected</h5>
+          <p class="text-white-50 mb-4">Subscribe to our newsletter for latest offers and news.</p>
+          <div class="input-group">
+            <input type="email" class="form-control bg-dark border-0 text-white" placeholder="Enter email"
+              style="padding: 12px 20px;">
+            <button class="btn btn-primary px-4" type="button">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; 2026 Nice Guest House & Training Hall. All rights reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed for Excellence | Powered by <a href="#" class="text-white-50 text-decoration-none">NGH Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- 360 Viewer Modal -->
+  <div class="modal fade" id="viewer3DModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content border-0 bg-dark">
+        <div class="modal-header border-0 position-absolute top-0 end-0 z-3">
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div id="panorama-container" style="width: 100%; height: 100vh;"></div>
+          <div class="viewer-info p-3 text-white position-absolute bottom-0 start-0 w-100 bg-dark bg-opacity-50">
+            <h5 class="mb-0 fw-bold" id="viewerHallTitle">Venue 360° View</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Initialize Select2
+    $(document).ready(function() {
+      $('#hallSelect').select2({
+        minimumResultsForSearch: Infinity,
+        placeholder: "Choose a hall..."
+      });
+    });
+
+    // Initialize Flatpickr
+    flatpickr("#conf-date", {
+      mode: "single",
+      minDate: "today",
+      dateFormat: "Y-m-d",
+      static: true,
+      monthSelectorType: "dropdown",
+      disableMobile: true,
+      onReady: function(selectedDates, dateStr, instance) {
+        // Initialize Select2 on the internal month dropdown
+        const monthSelect = instance.calendarContainer.querySelector('.flatpickr-monthDropdown-months');
+        if (monthSelect) {
+          $(monthSelect).select2({
+            minimumResultsForSearch: Infinity,
+            dropdownParent: $(instance.calendarContainer),
+            width: '120px'
+          }).on('select2:select', function(e) {
+            instance.changeMonth(parseInt(e.params.data.id), false);
+          });
+        }
+      },
+      onMonthChange: function(selectedDates, dateStr, instance) {
+        // Keep Select2 in sync when navigating with arrows
+        const monthSelect = instance.calendarContainer.querySelector('.flatpickr-monthDropdown-months');
+        if (monthSelect) {
+          $(monthSelect).val(instance.currentMonth).trigger('change.select2');
+        }
+      }
+    });
+
+    // Inquiry Flow feedback
+    document.getElementById('conferenceBookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('.booking-btn-premium');
+      const originalText = submitBtn.innerHTML;
+      
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+      
+      setTimeout(() => {
+        alert('Thank you for your inquiry! Our events manager will contact you within 24 hours to discuss layout and catering options.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        this.reset();
+        $('#hallSelect').val(null).trigger('change');
+      }, 1500);
+    });
+
+    // Elegant Navbar Logic
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 100) {
+        nav.classList.add('navbar-scrolled');
+        nav.classList.add('sticky-nav-dark');
+      } else {
+        nav.classList.remove('navbar-scrolled');
+        nav.classList.remove('sticky-nav-dark');
+      }
+    });
+
+    // Initial check
+    if (window.scrollY > 100) {
+      document.getElementById('main-nav').classList.add('navbar-scrolled');
+      document.getElementById('main-nav').classList.add('sticky-nav-dark');
+    }
+  </script>
+  <!-- Off-canvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header border-bottom">
+      <div class="offcanvas-title" id="offcanvasMenuLabel">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="offcanvas-logo">
+      </div>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="p-3 border-bottom" id="mobile-auth-section">
+        <div class="row g-2">
+          <div class="col-6">
+            <a href="signup.html" class="btn btn-primary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-person-plus me-1"></i> Sign Up
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="signin.html" class="btn btn-outline-secondary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+            </a>
+          </div>
+        </div>
+      </div>
+      <ul class="nav flex-column menu-list">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="conference.html"><i class="bi bi-building me-2"></i> Conference Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rooms.html"><i class="bi bi-door-closed me-2"></i> Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="restaurant.html"><i class="bi bi-egg-fried me-2"></i> Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="our-clients.html"><i class="bi bi-people me-2"></i> Our Honorable Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+            href="#mobileLangMenu" role="button" aria-expanded="false" aria-controls="mobileLangMenu">
+            <span><i class="bi bi-translate me-2"></i> Language</span>
+            <i class="bi bi-chevron-down small"></i>
+          </a>
+          <div class="collapse" id="mobileLangMenu">
+            <ul class="nav flex-column bg-light ps-4">
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-flag me-2"> English</a></li>
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali" class="lang-flag me-2"> Bengali</a></li>
+              <li class="nav-item"><a class="nav-link py-2" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi" class="lang-flag me-2"> Hindi</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item" id="mobile-signout-item" style="display:none;">
+          <a class="nav-link text-danger fw-bold" id="mobileSignOut" href="#"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

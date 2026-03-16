@@ -12,11 +12,18 @@
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
 
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  
+
   <!-- Flatpickr for Date Range -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
   <!-- Slick Slider for Hero Section -->
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
@@ -34,43 +41,81 @@
     rel="stylesheet">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/root.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
   <link rel="stylesheet" href="assets/css/responsive.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
 </head>
+<style>
+  body,html{
+    overflow-x: hidden;
+  }
+  
+  /* Hide Google Translate Top Bar Aggressively */
+  .goog-te-banner-frame.skiptranslate, 
+  .goog-te-banner-frame,
+  .goog-te-gadget-icon,
+  #goog-gt-tt,
+  .goog-te-balloon-frame,
+  .goog-te-menu-value img {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  
+  body {
+    top: 0px !important;
+    position: static !important;
+  }
 
+  .skiptranslate {
+    display: none !important;
+  }
+
+  #google_translate_element {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    visibility: hidden;
+    display: none;
+  }
+</style>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top py-4 transition-all" id="main-nav">
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-md-4 transition-all" id="main-nav">
     <div class="container-fluid px-md-5">
-      <a class="navbar-brand d-flex align-items-center" href="#">
-        <img src="assets/img/logo/logo2.png" alt="Logo" class="navbar-logo">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="navbar-logo">
       </a>
 
       <!-- Desktop Horizontal Menu -->
       <div class="d-none d-lg-flex flex-grow-1 justify-content-end align-items-center desktop-menu">
         <ul class="nav">
           <li class="nav-item">
-            <a href="#" class="nav-link active"><i class="bi bi-house-door me-1"></i> Home</a>
+            <a href="index.html" class="nav-link active"><i class="bi bi-house-door me-1"></i> Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="restaurant.html" class="nav-link"><i class="bi bi-egg-fried me-1"></i> Restaurants</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-egg-fried me-1"></i> Restaurants</a>
+            <a href="conference.html" class="nav-link"><i class="bi bi-building me-1"></i> Conference Hall</a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-building me-1"></i> Conference Hall</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"><i class="bi bi-envelope me-1"></i> Contact</a>
+            <a href="rooms.html" class="nav-link"><i class="bi bi-door-closed me-1"></i> Rooms</a>
           </li>
         </ul>
 
-        <!-- Sign Up Button -->
-        <a href="#" class="btn btn-primary rounded-pill btn-signup ms-3">
-          <i class="bi bi-person-plus me-2"></i>Sign Up
-        </a>
+        <!-- Auth Button (dynamic via JS) -->
+        <div id="auth-btn-wrapper" class="d-flex align-items-center">
+          <div class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-1 p-0 overflow-hidden ps-3 pe-3">
+            <a href="signup.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-person-plus me-1"></i> Sign Up</a>
+            <span class="text-white-50">|</span>
+            <a href="signin.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
+          </div>
+        </div>
 
         <!-- Desktop Dropdown Menu -->
         <div class="dropdown desktop-dropdown d-none d-lg-block ms-2">
@@ -82,12 +127,13 @@
               <span></span>
             </div>
           </button>
-          <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-3 mt-3 p-0"
+                    <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-3 mt-3 p-0"
             aria-labelledby="desktopMenuDropdown">
-            <li><a class="dropdown-item py-2 px-4" href="#"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
-            <li><a class="dropdown-item py-2 px-4" href="#"><i class="bi bi-people me-2"></i> Honorable Clients</a></li>
-            <li><a class="dropdown-item py-2 px-4" href="#"><i class="bi bi-door-closed me-2"></i> Rooms</a></li>
-            <li><a class="dropdown-item py-2 px-4" href="#"><i class="bi bi-images me-2"></i> Gallery</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="our-clients.html"><i class="bi bi-people me-2"></i> Honorable Clients</a></li>
+            <li><a class="dropdown-item py-2 px-4 " href="contact.html"><i class="bi bi-envelope me-2"></i> Contact</a>
+            </li>
+            <li><a class="dropdown-item py-2 px-4" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a></li>
             <li>
               <hr class="dropdown-divider mx-3">
             </li>
@@ -97,15 +143,13 @@
                 <span><i class="bi bi-translate me-2"></i> Language</span>
               </a>
               <ul class="dropdown-menu shadow border-0 py-2 p-0">
-                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English"
+                <li><a class="dropdown-item py-2 px-4" href="javascript:void(0);" onclick="changeLanguage('en')"><img src="https://flagcdn.com/w40/gb.png" alt="English"
                       class="lang-flag me-2"> English</a></li>
-                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali"
+                <li><a class="dropdown-item py-2 px-4" href="javascript:void(0);" onclick="changeLanguage('bn')"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali"
                       class="lang-flag me-2"> Bengali</a></li>
-                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi"
+                <li><a class="dropdown-item py-2 px-4" href="javascript:void(0);" onclick="changeLanguage('hi')"><img src="https://flagcdn.com/w40/in.png" alt="Hindi"
                       class="lang-flag me-2"> Hindi</a></li>
               </ul>
-            </li>
-          </ul>
         </div>
       </div>
 
@@ -131,57 +175,65 @@
     <div class="hero-overlay"></div>
     <div class="hero-diagonal-overlay"></div>
     <div class="container h-100 position-relative d-flex align-items-center justify-content-center text-center">
-      <div class="hero-content mt-5 text-white" data-aos="fade-up">
+      <div class="hero-content mt-5 text-white">
         <div class="hero-text-slider">
           <div class="hero-slide">
-            <h1 class="hero-title fw-bold mb-4">
-              <span class="d-block animate-item-1">Experience Luxury</span>
-              <span class="d-block animate-item-2">Like Never Before</span>
+            <h1 class="hero-title fw-bold mb-4 mt-3 mt-sm-5">
+              <span class="d-block animate-item-1">Welcome to</span>
+              <span class="d-block animate-item-2">NICE GUEST HOUSE</span>
             </h1>
-            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">Discover the finest guest house for your
-              next stay.</p>
+            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">Luxury, relaxation & tranquility are what
+              you will find at NGH.</p>
           </div>
           <div class="hero-slide">
-            <h1 class="hero-title fw-bold mb-4">
-              <span class="d-block animate-item-1">Your Perfect</span>
-              <span class="d-block animate-item-2">Home Away From Home</span>
+            <h1 class="hero-title fw-bold mb-4 mt-3 mt-sm-5">
+              <span class="d-block animate-item-1">The Warmth of</span>
+              <span class="d-block animate-item-2">Our Hospitality</span>
             </h1>
-            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">Unmatched comfort and personalized service.
-            </p>
+            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">The combination of good food, comfortable
+              surroundings and friendly service.</p>
           </div>
           <div class="hero-slide">
-            <h1 class="hero-title fw-bold mb-4">
-              <span class="d-block animate-item-1">Modern Amenities</span>
-              <span class="d-block animate-item-2">& Classic Charm</span>
+            <h1 class="hero-title fw-bold mb-4 mt-3 mt-sm-5">
+              <span class="d-block animate-item-1">Relaxed &</span>
+              <span class="d-block animate-item-2">Rejuvenated</span>
             </h1>
-            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">Everything you need for a memorable stay.
-            </p>
+            <p class="hero-subtitle mb-3 fw-light opacity-85 animate-item-3">High-speed internet and memories that will
+              ensure you leave with a refreshed spirit.</p>
           </div>
         </div>
-        <div class="hero-btns mt-4 d-flex gap-3 justify-content-center">
+        <div class="hero-btns mt-1 d-flex gap-3 justify-content-center">
           <a href="#booking" class="btn btn-primary btn-lg rounded-pill px-5 btn-animated-text">
             <span class="btn-text-wrapper">
               <span class="btn-text">Book Now</span>
               <span class="btn-text">Book Now</span>
             </span>
           </a>
-          <a href="#rooms" class="btn btn-outline-light btn-lg rounded-pill px-5 btn-animated-text">
+          <a href="#rooms" class="btn btn-outline-light btn-lg rounded-pill px-5 btn-animated-text btnviewmore">
             <span class="btn-text-wrapper">
               <span class="btn-text">View Rooms</span>
               <span class="btn-text">View Rooms</span>
             </span>
           </a>
+          <!-- Mobile Search Icon Trigger -->
+         
+          <button class="btn btn-outline-light rounded-pill btn-mobile-search d-block d-md-none" id="mobileSearchTrigger" style="font-size: 14px;">
+             <!-- <i class="bi bi-search"></i>  -->
+            Search
+          </button>
         </div>
 
         <!-- Pill-shaped Search Bar -->
         <div class="hero-search-wrapper mx-auto mt-4 position-relative">
-          <div
-            class="hero-search-container d-flex align-items-center bg-white shadow-lg rounded-pill p-1 position-relative">
+          <div class="hero-search-overlay">
+            <div class="hero-search-container d-flex align-items-center bg-white shadow-lg rounded-pill p-1 position-relative">
+              <!-- Mobile Close Button -->
+              <button class="btn btn-close d-none mobile-search-close" id="mobileSearchClose" aria-label="Close" style="position: absolute; right: 20px; top: 20px; z-index: 1051;"></button>
             <!-- Where Section -->
             <div class="search-item flex-grow-1 text-start px-4 py-2" id="search-where">
-              <div class="search-label fw-bold">Location</div>
+              <div class="search-label fw-bold">Select Property</div>
               <input type="text" class="search-input-field border-0 bg-transparent w-100 p-0" id="location-input"
-                placeholder="Search destinations" autocomplete="off">
+                placeholder="Choose Guest House" readonly autocomplete="off">
               <button class="search-clear-btn d-none" id="clear-where">
                 <i class="bi bi-x"></i>
               </button>
@@ -192,25 +244,14 @@
                   <span class="text-muted small fw-bold uppercase">Suggested destinations</span>
                 </div>
                 <div class="panel-body py-2" id="location-results">
-                  <!-- Nearby Item -->
-                  <div class="suggestion-item d-flex align-items-center px-4 py-3" data-location="nearby">
+                  <!-- Property 1 -->
+                  <div class="suggestion-item d-flex align-items-center px-4 py-3" data-location="Main Branch">
                     <div class="suggestion-icon me-3 bg-light rounded-3 p-2">
-                      <i class="bi bi-cursor text-primary"></i>
+                      <i class="bi bi-building text-primary"></i>
                     </div>
                     <div>
-                      <div class="suggestion-title fw-bold">Nearby</div>
-                      <div class="suggestion-subtitle text-muted small">Find what's around you</div>
-                    </div>
-                  </div>
-                  <!-- Static Destinations for BD -->
-                  <div class="suggestion-item d-flex align-items-center px-4 py-3"
-                    data-location="Cox's Bazar, Bangladesh">
-                    <div class="suggestion-icon me-3 bg-light rounded-3 p-2">
-                      <i class="bi bi-geo-alt text-success"></i>
-                    </div>
-                    <div>
-                      <div class="suggestion-title fw-bold">Cox's Bazar, Bangladesh</div>
-                      <div class="suggestion-subtitle text-muted small">The world's longest natural sea beach</div>
+                      <div class="suggestion-title fw-bold">Nice Guest House</div>
+                      <div class="suggestion-subtitle text-muted small">Uzzalpur, Maijdee Court</div>
                     </div>
                   </div>
                 </div>
@@ -221,7 +262,7 @@
 
             <!-- When Section -->
             <div class="search-item flex-grow-1 text-start px-4 py-2" id="search-when">
-              <div class="search-label fw-bold">Check-in</div>
+              <div class="search-label fw-bold">Stay Period</div>
               <div class="search-subtext text-muted small" id="date-display">Add dates</div>
               <input type="text" id="date-range-picker" style="display: none;">
               <button class="search-clear-btn d-none" id="clear-when">
@@ -310,13 +351,91 @@
     </div>
   </section>
 
+  <!-- Our Services Section -->
+  <section class="services-section py-5">
+    <div class="container py-md-5">
+      <div class="section-header d-flex justify-content-between align-items-end mb-5">
+        <div>
+          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">We Offer</h6>
+          <h2 class="display-5 fw-bold mb-0">Premium Services</h2>
+        </div>
+        <div class="d-none d-md-block">
+          <p class="text-muted mb-0 max-w-400">Experience world-class hospitality with our specialized services designed
+            for your comfort and productivity.</p>
+        </div>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Service 1: Conference -->
+        <div class="col-md-4">
+          <div class="service-premium-card">
+            <img src="assets/img/cover/conference.jpeg"
+              class="service-bg-img" alt="Conference Hall">
+            <div class="service-premium-overlay">
+              <div class="service-premium-icon">
+                <i class="bi bi-building"></i>
+              </div>
+              <div class="service-premium-content">
+                <h4>Conference Hall Booking</h4>
+                <p>7+ Multi-floor halls for up to 100 persons with HD AV setup and city views.</p>
+              </div>
+              <a href="conference.html" class="service-learn-more">
+                Plan Your Event <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2: Restaurant -->
+        <div class="col-md-4">
+          <div class="service-premium-card">
+            <img src="assets/img/cover/restaurent.jpeg"
+              class="service-bg-img" alt="Restaurant & Dining">
+            <div class="service-premium-overlay">
+              <div class="service-premium-icon">
+                <i class="bi bi-egg-fried"></i>
+              </div>
+              <div class="service-premium-content">
+                <h4>Restaurant & Dining</h4>
+                <p>3 Multi-cuisine specialized restaurants featuring Thai, Indian, Chinese & Deshi flavors.</p>
+              </div>
+              <a href="restaurant.html" class="service-learn-more">
+                Explore Menu <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Guest House -->
+        <div class="col-md-4">
+          <div class="service-premium-card">
+            <img src="assets/img/cover/room.jpeg"
+              class="service-bg-img" alt="Guest House & Rooms">
+            <div class="service-premium-overlay">
+              <div class="service-premium-icon">
+                <i class="bi bi-door-closed"></i>
+              </div>
+              <div class="service-premium-content">
+                <h4>Guest House & Rooms</h4>
+                <p>58 luxury 3-star rooms in the heart of the city with 24/7 security and elite comfort.</p>
+              </div>
+              <a href="rooms.html" class="service-learn-more">
+                View Rooms <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Featured Offers Section -->
   <section class="offers-section py-5 bg-light">
-    <div class="container py-4">
-      <div class="section-header d-flex justify-content-between align-items-end mb-5" data-aos="fade-up">
+    <div class="container py-md-5">
+      <div class="section-header d-flex justify-content-between align-items-end mb-5">
         <div>
-          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Exclusive Deals</h6>
-          <h2 class="display-5 fw-bold mb-0">Featured Offers</h2>
+          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Available</h6>
+          <h2 class="display-5 fw-bold mb-0">Rooms and Suites</h2>
         </div>
         <div class="d-none d-md-block">
           <p class="text-muted mb-0 max-w-400">Discover our handpicked selection of luxury stays at unbeatable prices.
@@ -324,14 +443,24 @@
         </div>
       </div>
 
-      <div class="offers-slider" data-aos="fade-up" data-aos-delay="200">
+      <div class="offers-slider">
         <!-- Offer Card 1 -->
         <div class="px-3">
           <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-            <div class="offer-image-wrapper position-relative">
-              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+            <div class="offer-image-wrapper position-relative"
+              onclick="open3DViewer('https://pannellum.org/images/alma.jpg', 'Oceanfront Infinity Villa')">
+              <img src="assets/img/room/room1.jpg"
                 alt="Luxury Villa" class="offer-img w-100">
-              <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+              <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
               <div class="offer-badge top-pick">Early 2026 Deal</div>
             </div>
             <div class="offer-content p-3">
@@ -342,12 +471,15 @@
                 <i class="bi bi-geo-alt me-1"></i> Maldives, Indian Ocean
               </p>
 
-              <div class="d-flex align-items-center mb-2">
-                <div class="rating-box me-2">9.8</div>
-                <div class="rating-info">
-                  <div class="rating-text fw-bold">Exceptional</div>
-                  <div class="rating-count text-muted">120 genuine reviews</div>
+              <div class="rating-stars-wrapper d-flex align-items-center gap-2 mb-2">
+                <div class="stars text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
                 </div>
+                <span class="rating-text-condensed text-muted small">(9.8 · 120 reviews)</span>
               </div>
 
               <div class="offer-features d-flex gap-2 text-muted extra-small mb-3">
@@ -359,14 +491,22 @@
               </div>
 
               <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
-                <div class="offer-dates">
-                  <div class="text-dark fw-bold small">05/07 - 05/10</div>
-                  <div class="text-muted extra-small">3 nights, 2 adults</div>
+                <div class="offer-dates-wrapper d-flex flex-column gap-2 align-items-start">
+                  <button class="btn-toggle-360"
+                    onclick="event.stopPropagation(); open3DViewer('https://pannellum.org/images/alma.jpg', 'Oceanfront Infinity Villa')">
+                    <i class="bi bi-arrow-repeat"></i> 360° View
+                  </button>
+                  <div class="offer-dates">
+                    <div class="text-dark fw-bold small">05/07 - 05/10</div>
+                    <div class="text-muted extra-small">3 nights, 2 adults</div>
+                  </div>
                 </div>
                 <div class="offer-pricing text-end">
-                  <div class="price-old text-decoration-line-through text-muted small">$350</div>
-                  <div class="price-current fw-bold text-dark h5 mb-2">$299</div>
-                  <a href="#" class="view-deal-link text-decoration-none fw-bold small">
+                  <div class="d-flex align-items-center justify-content-end gap-2 mb-1">
+                    <div class="price-old text-decoration-line-through text-muted small">$350</div>
+                    <div class="price-current fw-bold text-dark h5 mb-0">$299</div>
+                  </div>
+                  <a href="room-details.html" class="view-deal-link text-decoration-none fw-bold small">
                     View deal <i class="bi bi-chevron-right ms-1"></i>
                   </a>
                 </div>
@@ -378,10 +518,20 @@
         <!-- Offer Card 2 -->
         <div class="px-3">
           <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-            <div class="offer-image-wrapper position-relative">
-              <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80"
+            <div class="offer-image-wrapper position-relative"
+              onclick="open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Metropolitan Sky Penthouse')">
+              <img src="assets/img/room/room2.jpg"
                 alt="Modern Penthouse" class="offer-img w-100">
-              <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+              <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
               <div class="offer-badge new-listing">Genius Exclusive</div>
             </div>
             <div class="offer-content p-3">
@@ -392,12 +542,15 @@
                 <i class="bi bi-geo-alt me-1"></i> Central Park, New York
               </p>
 
-              <div class="d-flex align-items-center mb-2">
-                <div class="rating-box me-2">4.8</div>
-                <div class="rating-info">
-                  <div class="rating-text fw-bold">Very Good</div>
-                  <div class="rating-count text-muted">85 genuine reviews</div>
+              <div class="rating-stars-wrapper d-flex align-items-center gap-2 mb-2">
+                <div class="stars text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
                 </div>
+                <span class="rating-text-condensed text-muted small">(4.8 · 85 reviews)</span>
               </div>
 
               <div class="offer-features d-flex gap-2 text-muted extra-small mb-3">
@@ -409,13 +562,21 @@
               </div>
 
               <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
-                <div class="offer-dates">
-                  <div class="text-dark fw-bold small">03/19 - 03/23</div>
-                  <div class="text-muted extra-small">4 nights, 4 adults</div>
+                <div class="offer-dates-wrapper d-flex flex-column gap-2 align-items-start">
+                  <button class="btn-toggle-360"
+                    onclick="event.stopPropagation(); open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Metropolitan Sky Penthouse')">
+                    <i class="bi bi-arrow-repeat"></i> 360° View
+                  </button>
+                  <div class="offer-dates">
+                    <div class="text-dark fw-bold small">03/19 - 03/23</div>
+                    <div class="text-muted extra-small">4 nights, 4 adults</div>
+                  </div>
                 </div>
                 <div class="offer-pricing text-end">
-                  <div class="price-old text-decoration-line-through text-muted small">$520</div>
-                  <div class="price-current fw-bold text-dark h5 mb-2">$450</div>
+                  <div class="d-flex align-items-center justify-content-end gap-2 mb-1">
+                    <div class="price-old text-decoration-line-through text-muted small">$520</div>
+                    <div class="price-current fw-bold text-dark h5 mb-0">$450</div>
+                  </div>
                   <a href="#" class="view-deal-link text-decoration-none fw-bold small">
                     View deal <i class="bi bi-chevron-right ms-1"></i>
                   </a>
@@ -428,10 +589,20 @@
         <!-- Offer Card 3 -->
         <div class="px-3">
           <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-            <div class="offer-image-wrapper position-relative">
-              <img src="https://images.unsplash.com/photo-1542718610-a1d656d1884c?auto=format&fit=crop&w=800&q=80"
-                alt="Alpine Chalet" class="offer-img w-100">
-              <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+            <div class="offer-image-wrapper position-relative"
+              onclick="open3DViewer('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Alpine Peaks Luxury Chalet')">
+              <img src="assets/img/room/room3.jpg"
+                alt="Modern Penthouse" class="offer-img w-100">
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+              <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
               <div class="offer-badge seasonal">Early 2026 Deal</div>
             </div>
             <div class="offer-content p-3">
@@ -442,12 +613,15 @@
                 <i class="bi bi-geo-alt me-1"></i> Zermatt, Switzerland
               </p>
 
-              <div class="d-flex align-items-center mb-2">
-                <div class="rating-box me-2">5.0</div>
-                <div class="rating-info">
-                  <div class="rating-text fw-bold">Wonderful</div>
-                  <div class="rating-count text-muted">54 genuine reviews</div>
+              <div class="rating-stars-wrapper d-flex align-items-center gap-2 mb-2">
+                <div class="stars text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
                 </div>
+                <span class="rating-text-condensed text-muted small">(5.0 · 54 reviews)</span>
               </div>
 
               <div class="offer-features d-flex gap-2 text-muted extra-small mb-3">
@@ -459,13 +633,21 @@
               </div>
 
               <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
-                <div class="offer-dates">
-                  <div class="text-dark fw-bold small">12/15 - 12/22</div>
-                  <div class="text-muted extra-small">7 nights, 8 adults</div>
+                <div class="offer-dates-wrapper d-flex flex-column gap-2 align-items-start">
+                  <button class="btn-toggle-360"
+                    onclick="event.stopPropagation(); open3DViewer('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', 'Alpine Peaks Luxury Chalet')">
+                    <i class="bi bi-arrow-repeat"></i> 360° View
+                  </button>
+                  <div class="offer-dates">
+                    <div class="text-dark fw-bold small">12/15 - 12/22</div>
+                    <div class="text-muted extra-small">7 nights, 8 adults</div>
+                  </div>
                 </div>
                 <div class="offer-pricing text-end">
-                  <div class="price-old text-decoration-line-through text-muted small">$410</div>
-                  <div class="price-current fw-bold text-dark h5 mb-2">$320</div>
+                  <div class="d-flex align-items-center justify-content-end gap-2 mb-1">
+                    <div class="price-old text-decoration-line-through text-muted small">$410</div>
+                    <div class="price-current fw-bold text-dark h5 mb-0">$320</div>
+                  </div>
                   <a href="#" class="view-deal-link text-decoration-none fw-bold small">
                     View deal <i class="bi bi-chevron-right ms-1"></i>
                   </a>
@@ -478,10 +660,20 @@
         <!-- Offer Card 4 -->
         <div class="px-3">
           <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
-            <div class="offer-image-wrapper position-relative">
-              <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80"
-                alt="Desert Oasis" class="offer-img w-100">
-              <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+            <div class="offer-image-wrapper position-relative"
+              onclick="open3DViewer('https://pannellum.org/images/alma.jpg', 'Desert Sands Royal Suite')">
+             <img src="assets/img/room/room4.jpg"
+                alt="Modern Penthouse" class="offer-img w-100">
+              <div class="orbit-360-container">
+                <div class="orbit-360-outer"></div>
+                <div class="orbit-360-system">
+                  <div class="orbit-ring one"></div>
+                  <div class="orbit-ring two"></div>
+                </div>
+                <div class="orbit-label">360°</div>
+              </div>
+              <div class="view-360-overlay"></div>
+              <button class="wishlist-btn" onclick="event.stopPropagation()"><i class="bi bi-heart"></i></button>
               <div class="offer-badge exclusive">Genius Exclusive</div>
             </div>
             <div class="offer-content p-3">
@@ -492,12 +684,15 @@
                 <i class="bi bi-geo-alt me-1"></i> Dubai, UAE
               </p>
 
-              <div class="d-flex align-items-center mb-2">
-                <div class="rating-box me-2">4.7</div>
-                <div class="rating-info">
-                  <div class="rating-text fw-bold">Great</div>
-                  <div class="rating-count text-muted">92 genuine reviews</div>
+              <div class="rating-stars-wrapper d-flex align-items-center gap-2 mb-2">
+                <div class="stars text-warning">
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
                 </div>
+                <span class="rating-text-condensed text-muted small">(4.7 · 92 reviews)</span>
               </div>
 
               <div class="offer-features d-flex gap-2 text-muted extra-small mb-3">
@@ -509,13 +704,21 @@
               </div>
 
               <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
-                <div class="offer-dates">
-                  <div class="text-dark fw-bold small">02/28 - 03/02</div>
-                  <div class="text-muted extra-small">2 nights, 2 adults</div>
+                <div class="offer-dates-wrapper d-flex flex-column gap-2 align-items-start">
+                  <button class="btn-toggle-360"
+                    onclick="event.stopPropagation(); open3DViewer('https://pannellum.org/images/alma.jpg', 'Desert Sands Royal Suite')">
+                    <i class="bi bi-arrow-repeat"></i> 360° View
+                  </button>
+                  <div class="offer-dates">
+                    <div class="text-dark fw-bold small">02/28 - 03/02</div>
+                    <div class="text-muted extra-small">2 nights, 2 adults</div>
+                  </div>
                 </div>
                 <div class="offer-pricing text-end">
-                  <div class="price-old text-decoration-line-through text-muted small">$310</div>
-                  <div class="price-current fw-bold text-dark h5 mb-2">$275</div>
+                  <div class="d-flex align-items-center justify-content-end gap-2 mb-1">
+                    <div class="price-old text-decoration-line-through text-muted small">$310</div>
+                    <div class="price-current fw-bold text-dark h5 mb-0">$275</div>
+                  </div>
                   <a href="#" class="view-deal-link text-decoration-none fw-bold small">
                     View deal <i class="bi bi-chevron-right ms-1"></i>
                   </a>
@@ -525,217 +728,417 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Conference Facilities Section -->
-  <section class="conference-section py-5">
-    <div class="container">
-      <!-- Section Header -->
-      <div class="section-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
-        <div class="text-center text-md-start mb-3 mb-md-0">
-          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Premium Venues</h6>
-          <h2 class="display-5 fw-bold mb-0">World-Class Conference Facilities</h2>
-        </div>
-        <div class="d-none d-md-block">
-          <p class="text-muted mb-0 max-w-400">
-            Host your next event in our premium conference halls equipped with state-of-the-art technology and
-            flexible
-            layouts.
-          </p>
-        </div>
-      </div>
-
-      <!-- Conference Hall Cards -->
-      <div class="row g-4 mb-5">
-        <!-- Ground Floor Hall -->
-        <div class="col-lg-4 col-md-6">
-          <div class="conference-card card h-100 border-0 shadow-sm">
-            <div class="hall-image-container position-relative overflow-hidden"
-              onclick="open3DViewer('https://pannellum.org/images/alma.jpg', 'Ground Floor Hall')">
-              <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=800&q=80"
-                alt="Ground Floor Hall" class="card-img-top hall-img">
-              <div class="view-360-overlay d-flex align-items-center justify-content-center">
-                <span class="btn btn-light btn-sm fw-bold"><i class="bi bi-view-stacked me-1"></i> 360° View</span>
-              </div>
-            </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="capacity-badge-pill">
-                  <i class="bi bi-people-fill me-1"></i> Up to 50 Guests
-                </span>
-              </div>
-              <h4 class="fw-bold mb-2">Ground Floor Hall</h4>
-              <p class="text-muted hall-description mb-3">
-                Ideal for high-level board meetings, intimate corporate strategy sessions, and private VIP gatherings.
-              </p>
-              <ul class="conference-features mb-4">
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-wifi"></i></div> High-Speed WiFi
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-projector"></i></div> Projector & Screen
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-grid-3x3-gap"></i></div> Flexible Seating
-                </li>
-              </ul>
-              <div class="card-actions">
-                <button class="btn btn-view-360 rounded-3"
-                  onclick="open3DViewer('https://pannellum.org/images/alma.jpg', 'Ground Floor Hall')">
-                  <i class="bi bi-view-stacked"></i> 360° View
-                </button>
-                <button class="btn btn-book-now rounded-3 book-hall-btn" data-bs-toggle="modal"
-                  data-bs-target="#bookingModal" data-hall-name="Ground Floor Hall" data-hall-capacity="50">
-                  <i class="bi bi-calendar-check"></i> Book Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3rd Floor Hall -->
-        <div class="col-lg-4 col-md-6">
-          <div class="conference-card card h-100 border-0 shadow-sm position-relative">
-            <div class="popular-badge-pill">Most Popular</div>
-              <div class="hall-image-container position-relative overflow-hidden"
-              onclick="open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '3rd Floor Hall')">
-              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80"
-                alt="Ground Floor Hall" class="card-img-top hall-img">
-              <div class="view-360-overlay d-flex align-items-center justify-content-center">
-                <span class="btn btn-light btn-sm fw-bold"><i class="bi bi-view-stacked me-1"></i> 360° View</span>
-              </div>
-            </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="capacity-badge-pill">
-                  <i class="bi bi-people-fill me-1"></i> Up to 100 Guests
-                </span>
-              </div>
-              <h4 class="fw-bold mb-2">3rd Floor Hall</h4>
-              <p class="text-muted hall-description mb-3">
-                A grand space perfect for large scale conferences, detailed training programs, and workshops.
-              </p>
-              <ul class="conference-features mb-4">
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-display"></i></div> 4K LED Display
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-megaphone"></i></div> Surround Sound
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-layout-text-window-reverse"></i></div> Theater Layout
-                </li>
-              </ul>
-              <div class="card-actions">
-                <button class="btn btn-view-360 rounded-3"
-                  onclick="open3DViewer('https://images.unsplash.com/photo-1596522354195-e84ae3c98731?q=80&w=887&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '3rd Floor Hall')">
-                  <i class="bi bi-view-stacked"></i> 360° View
-                </button>
-                <button class="btn btn-book-now rounded-3 book-hall-btn" data-bs-toggle="modal"
-                  data-bs-target="#bookingModal" data-hall-name="3rd Floor Hall" data-hall-capacity="100">
-                  <i class="bi bi-calendar-check"></i> Book Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 7th Floor Hall -->
-        <div class="col-lg-4 col-md-6">
-          <div class="conference-card card h-100 border-0 shadow-sm">
-             <div class="hall-image-container position-relative overflow-hidden"
-              onclick="open3DViewer('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '7th Floor Hall')">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
-                alt="Ground Floor Hall" class="card-img-top hall-img">
-              <div class="view-360-overlay d-flex align-items-center justify-content-center">
-                <span class="btn btn-light btn-sm fw-bold"><i class="bi bi-view-stacked me-1"></i> 360° View</span>
-              </div>
-            </div>
-            <div class="card-body p-4 d-flex flex-column">
-              <div class="d-flex align-items-center justify-content-between mb-3">
-                <span class="capacity-badge-pill">
-                  <i class="bi bi-people-fill me-1"></i> Up to 40 Guests
-                </span>
-              </div>
-              <h4 class="fw-bold mb-2">7th Floor Hall</h4>
-              <p class="text-muted hall-description mb-3">
-                An executive sanctuary with breathtaking views, perfect for high-stakes leadership sessions.
-              </p>
-              <ul class="conference-features mb-4">
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-building-up"></i></div> City Panorama
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-briefcase"></i></div> Premium Lounge
-                </li>
-                <li>
-                  <div class="feature-icon-box"><i class="bi bi-cup-hot"></i></div> Refreshments
-                </li>
-              </ul>
-              <div class="card-actions">
-                <button class="btn btn-view-360 rounded-3"
-                  onclick="open3DViewer('https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', '7th Floor Hall')">
-                  <i class="bi bi-view-stacked"></i> 360° View
-                </button>
-                <button class="btn btn-book-now rounded-3 book-hall-btn" data-bs-toggle="modal"
-                  data-bs-target="#bookingModal" data-hall-name="7th Floor Hall" data-hall-capacity="40">
-                  <i class="bi bi-calendar-check"></i> Book Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Key Facilities Grid -->
-      <div class="row g-4 mb-5">
-        <div class="col-6 col-md-3">
-          <div class="facility-item facility-card-1 text-center p-4">
-            <i class="bi bi-wifi facility-icon"></i>
-            <p class="mb-0 fw-bold">High-Speed WiFi</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="facility-item facility-card-2 text-center p-4">
-            <i class="bi bi-projector-fill facility-icon"></i>
-            <p class="mb-0 fw-bold">Projector Setup</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="facility-item facility-card-3 text-center p-4">
-            <i class="bi bi-boombox-fill facility-icon"></i>
-            <p class="mb-0 fw-bold">Sound System</p>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="facility-item facility-card-4 text-center p-4">
-            <i class="bi bi-grid-3x3-gap-fill facility-icon"></i>
-            <p class="mb-0 fw-bold">Flexible Layouts</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <a href="conference.html" class="btn btn-primary btn-lg px-5 py-3">
-          Explore All Facilities
-          <i class="bi bi-arrow-right ms-2"></i>
+      <div class="text-center mt-5">
+        <a href="rooms.html" class="btn btn-primary btn-modern btn-lg px-5 py-3 rounded-3 shadow-sm fw-bold">
+          See More Room <i class="bi bi-arrow-right ms-2"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Trending Destinations Section -->
-  <section class="trending-section">
-    <div class="container">
+  <!-- Restaurant Summarization Section (Upgraded to 8-Card Grid) -->
+  <section class="dining-summary-section py-5 bg-white ">
+    <div class="container py-md-5">
+      <div class="row  g-5">
+        <div class="col-lg-6">
+          <div class="section-header mb-4">
+            <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Culinary Excellence</h6>
+            <h1 class="display-5 fw-bold mb-4">Restaurant at <br> Nice Guest House</h1>
+          </div>
+          <p class="text-muted lead mb-4">
+            Indulge in a world of flavor with our diverse menu featuring authentic Thai, Chinese, Indian, and local
+            Deshi delicacies. Whether you're seeking a scenic rooftop view or a refined indoor ambiance, our three
+            distinct restaurants offer an unforgettable dining experience.
+          </p>
+          <div class="row g-2 mb-5 row-cols-2 row-cols-md-4">
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-egg-fried"></i>
+                <span class="fw-bold">3 Restaurants</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-clouds"></i>
+                <span class="fw-bold">Rooftop View</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-shield-check"></i>
+                <span class="fw-bold">Fresh & Hygienic</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-building"></i>
+                <span class="fw-bold">7th Floor Dining</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-brightness-high"></i>
+                <span class="fw-bold">Thai Specialties</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-tencent-qq"></i>
+                <span class="fw-bold">Chinese Cuisine</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-fire"></i>
+                <span class="fw-bold">Indian Flavors</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-house-heart"></i>
+                <span class="fw-bold">Local Deshi Food</span>
+              </div>
+            </div>
+          </div>
+          <a href="restaurant.html" class="btn btn-primary btn-modern btn-lg px-5 py-3 rounded-3 shadow-sm">
+            Explore Our Dining <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="overlapping-image-container mt-5">
+            <img src="assets/img/restaurant/rest-small.jpg"
+              alt="NGH Restaurant Ambiance" class="main-image">
+            <img src="assets/img/restaurant/rest-big.jpg"
+              alt="Delicious Cuisine" class="secondary-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conference Summary Section -->
+  <section class="conference-summary-section py-5 bg-white ">
+    <div class="container py-md-5">
+      <div class="row g-5 flex-row-reverse">
+        <div class="col-lg-6">
+          <div class="section-header mb-4">
+            <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Premium Venues</h6>
+            <h1 class="display-5 fw-bold mb-4">World-Class <br> Conference Facilities</h1>
+          </div>
+          <p class="text-muted lead mb-4">
+            Host your next event in our premium conference halls equipped with state-of-the-art technology and flexible
+            layouts. Whether it's a corporate seminar, a private meeting, or a grand social gathering, we provide the
+            perfect ambiance for success.
+          </p>
+          <div class="row g-2 mb-5 row-cols-2 row-cols-md-4">
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-wifi"></i>
+                <span class="fw-bold">High-Speed WiFi</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-projector"></i>
+                <span class="fw-bold">Projector Setup</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-boombox"></i>
+                <span class="fw-bold">Sound System</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-grid-3x3-gap"></i>
+                <span class="fw-bold">Flexible Layouts</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-snow"></i>
+                <span class="fw-bold">Air Conditioning</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-cup-hot"></i>
+                <span class="fw-bold">Event Catering</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-p-circle"></i>
+                <span class="fw-bold">Large Parking</span>
+              </div>
+            </div>
+            <div class="col">
+              <div class="conf-feature-card">
+                <i class="bi bi-building-up"></i>
+                <span class="fw-bold">City Panorama</span>
+              </div>
+            </div>
+          </div>
+          <a href="conference.html" class="btn btn-primary btn-modern btn-lg px-5 py-3 rounded-3 shadow-sm">
+            Explore Venues <i class="bi bi-arrow-right ms-2"></i>
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <div class="overlapping-image-container image-left mt-5">
+            <img src="assets/img/conference/conf-big.jpg"
+              alt="Premium Conference Hall" class="main-image shadow-lg">
+            <img src="assets/img/conference/conf-small.jpg"
+              alt="Modern Boardroom" class="secondary-image shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Available Offers Section -->
+  <section class="available-offers-section py-5 bg-white">
+    <div class="container py-md-5">
       <div class="section-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
         <div class="text-center text-md-start mb-3 mb-md-0">
-          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Explore Destinations</h6>
-          <h2 class="display-5 fw-bold mb-0">Trending destinations</h2>
+          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Special Promotions</h6>
+          <h2 class="display-5 fw-bold mb-0">Available Offers</h2>
         </div>
         <div class="d-none d-md-block">
           <p class="text-muted mb-0 max-w-400">
-            Travelers searching for Bangladesh also booked these popular spots across Asia and the Middle East.
+            Grab our handpicked limited-time deals and experience premium luxury at unbeatable prices.
+          </p>
+        </div>
+      </div>
+
+      <div class="available-offers-slider">
+        <!-- Offer 1: Presidential Suite -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+              alt="Presidential Suite" class="destination-img">
+            <div class="offer-badge-premium exclusive">Limited Time</div>
+            <div class="offer-info-panel">
+              <h4>Presidential Suite Weekend</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-cup-hot-fill"></i> Breakfast</span>
+                <span><i class="bi bi-p-circle-fill"></i> Parking</span>
+                <span><i class="bi bi-wifi"></i> WiFi</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$450</span>
+                <span class="offer-price-new">$320</span>
+                <span class="offer-price-label">/ PER NIGHT</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Offer 2: Honeymoon Special -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+              alt="Honeymoon Special" class="destination-img">
+            <div class="offer-badge-premium top-pick">Best Value</div>
+            <div class="offer-info-panel">
+              <h4>Honeymoon Romantic Deal</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-heart-fill"></i> Decor</span>
+                <span><i class="bi bi-stars"></i> Spa</span>
+                <span><i class="bi bi-egg-fried"></i> Dinner</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$380</span>
+                <span class="offer-price-new">$275</span>
+                <span class="offer-price-label">/ PACKAGE</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Offer 3: Weekend Retreat -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80"
+              alt="Weekend Retreat" class="destination-img">
+            <div class="offer-badge-premium new-listing">Popular</div>
+            <div class="offer-info-panel">
+              <h4>Family Weekend Escape</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-people-fill"></i> 4 Pack</span>
+                <span><i class="bi bi-controller"></i> Kids Zone</span>
+                <span><i class="bi bi-snow"></i> AC</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$250</span>
+                <span class="offer-price-new">$199</span>
+                <span class="offer-price-label">/ PER NIGHT</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Offer 4: Executive Business -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+              alt="Business Stay" class="destination-img">
+            <div class="offer-badge-premium seasonal">Business</div>
+            <div class="offer-info-panel">
+              <h4>Executive Business Stay</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-briefcase-fill"></i> Desk</span>
+                <span><i class="bi bi-speedometer2"></i> Gigabit</span>
+                <span><i class="bi bi-printer"></i> Print</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$220</span>
+                <span class="offer-price-new">$180</span>
+                <span class="offer-price-label">/ PER NIGHT</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Offer 5: Rooftop Dining -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+              alt="Rooftop Dining" class="destination-img">
+            <div class="offer-badge-premium exclusive">Dining</div>
+            <div class="offer-info-panel">
+              <h4>Rooftop Dinner For Two</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-clouds-fill"></i> View</span>
+                <span><i class="bi bi-music-note-beamed"></i> Music</span>
+                <span><i class="bi bi-cup-straw"></i> Drinks</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$120</span>
+                <span class="offer-price-new">$89</span>
+                <span class="offer-price-label">/ PER COUPLE</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Offer 6: Conference Special -->
+        <div class="px-3">
+          <div class="offer-premium-card">
+            <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=800&q=80"
+              alt="Conference Deal" class="destination-img">
+            <div class="offer-badge-premium top-pick">Events</div>
+            <div class="offer-info-panel">
+              <h4>Full-Day Conference Deal</h4>
+              <div class="offer-features-list">
+                <span><i class="bi bi-projector-fill"></i> Proj</span>
+                <span><i class="bi bi-boombox-fill"></i> Sound</span>
+                <span><i class="bi bi-egg-fried"></i> Lunch</span>
+              </div>
+              <div class="offer-pricing-panel">
+                <span class="offer-price-old">$500</span>
+                <span class="offer-price-new">$420</span>
+                <span class="offer-price-label">/ FULL DAY</span>
+              </div>
+            </div>
+            <button class="offer-claim-btn">
+              Claim Offer <i class="bi bi-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Honorable Clients Infinite Marquee Section -->
+  <section class="clients-marquee-section py-5">
+    <div class="container py-md-0">
+      <div class="section-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
+        <div class="text-center text-md-start mb-3 mb-md-0">
+          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Our Elite Partners</h6>
+          <h2 class="display-5 fw-bold mb-0">Our Clients</h2>
+        </div>
+        <div class="d-none d-md-block text-md-end">
+          <p class="text-muted mb-0 max-w-400">
+            Trusted by global leaders and national giants, we pride ourselves on delivering excellence since 2007.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="marquee-container">
+      <!-- Row 1: Scrolling Left -->
+      <div class="marquee-track">
+        <!-- Original Set -->
+        <div class="marquee-item"><img src="assets/img/client/actionaid-logo.png" alt="ActionAid"><span>ActionAid</span></div>
+        <div class="marquee-item"><img src="assets/img/client/benham-pharmaceuticals-logo.png" alt="Benham Pharmaceuticals"><span style="font-size: 9px;">Benham Pharmaceuticals</span></div>
+        <div class="marquee-item"><img src="assets/img/client/city-group-logo.jpg.jpeg" alt="City Group"><span>City Group</span></div>
+        <div class="marquee-item"><img src="assets/img/client/drc_logo.jpg.jpeg" alt="DRC"><span>DRC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/grameenphone-logo.jpg.jpeg" alt="Grameenphone"><span>Grameenphone</span></div>
+        <div class="marquee-item"><img src="assets/img/client/jica-logo.png" alt="JICA"><span>JICA</span></div>
+        <div class="marquee-item"><img src="assets/img/client/renata-logo.png" alt="Renata"><span>Renata</span></div>
+        <!-- Duplicate Set for Loop -->
+        <div class="marquee-item"><img src="assets/img/client/actionaid-logo.png" alt="ActionAid"><span>ActionAid</span></div>
+        <div class="marquee-item"><img src="assets/img/client/benham-pharmaceuticals-logo.png" alt="Benham Pharmaceuticals"><span style="font-size: 9px;">Benham Pharmaceuticals</span></div>
+        <div class="marquee-item"><img src="assets/img/client/city-group-logo.jpg.jpeg" alt="City Group"><span>City Group</span></div>
+        <div class="marquee-item"><img src="assets/img/client/drc_logo.jpg.jpeg" alt="DRC"><span>DRC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/grameenphone-logo.jpg.jpeg" alt="Grameenphone"><span>Grameenphone</span></div>
+        <div class="marquee-item"><img src="assets/img/client/jica-logo.png" alt="JICA"><span>JICA</span></div>
+        <div class="marquee-item"><img src="assets/img/client/renata-logo.png" alt="Renata"><span>Renata</span></div>
+      </div>
+
+      <!-- Row 2: Scrolling Right -->
+      <div class="marquee-track">
+        <!-- Original Set -->
+        <div class="marquee-item"><img src="assets/img/client/robi-logo.jpg.jpeg" alt="Robi"><span>Robi</span></div>
+        <div class="marquee-item"><img src="assets/img/client/square-logo.jpg.jpeg" alt="Square"><span>Square</span></div>
+        <div class="marquee-item"><img src="assets/img/client/stc-logo.jpg.jpeg" alt="STC"><span>STC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/usaid-logo.png" alt="USAID"><span>USAID</span></div>
+        <div class="marquee-item"><img src="assets/img/client/walton-logo.jpg.jpeg" alt="Walton"><span>Walton</span></div>
+        <div class="marquee-item"><img src="assets/img/client/wec-logo.jpeg" alt="WEC"><span>WEC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/wfp-logo.jpg.jpeg" alt="WFP"><span>WFP</span></div>
+        <!-- Duplicate Set for Loop -->
+        <div class="marquee-item"><img src="assets/img/client/robi-logo.jpg.jpeg" alt="Robi"><span>Robi</span></div>
+        <div class="marquee-item"><img src="assets/img/client/square-logo.jpg.jpeg" alt="Square"><span>Square</span></div>
+        <div class="marquee-item"><img src="assets/img/client/stc-logo.jpg.jpeg" alt="STC"><span>STC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/usaid-logo.png" alt="USAID"><span>USAID</span></div>
+        <div class="marquee-item"><img src="assets/img/client/walton-logo.jpg.jpeg" alt="Walton"><span>Walton</span></div>
+        <div class="marquee-item"><img src="assets/img/client/wec-logo.jpeg" alt="WEC"><span>WEC</span></div>
+        <div class="marquee-item"><img src="assets/img/client/wfp-logo.jpg.jpeg" alt="WFP"><span>WFP</span></div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="our-clients.html" class="btn btn-primary btn-modern btn-lg px-5 py-3 rounded-3 shadow-sm fw-bold">
+        View All Partners <i class="bi bi-arrow-right ms-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- Trending Destinations Section -->
+  <section class="trending-section py-5">
+    <div class="container py-md-5">
+      <div class="section-header d-flex flex-column flex-md-row justify-content-between align-items-center mb-5">
+        <div class="text-center text-md-start mb-3 mb-md-0">
+          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Noakhali Tourism</h6>
+          <h2 class="display-5 fw-bold mb-0">Explore Noakhali best travel places</h2>
+        </div>
+        <div class="d-none d-md-block text-md-end">
+          <p class="text-muted mb-0 max-w-400">
+            Discover the hidden gems and breathtaking landscapes of Noakhali. From historic sites to serene natural
+            beauty, explore the best of our local heritage.
           </p>
         </div>
       </div>
@@ -744,23 +1147,25 @@
       <div class="row g-4 mb-4">
         <div class="col-md-6">
           <div class="trending-card destination-card-lg">
-            <img src="https://images.unsplash.com/photo-1630987871777-f7b2d62894d0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            <img
+              src="assets/img/place/noa-1.jpg"
               alt="Dhaka" class="destination-img">
             <div class="card-gradient-overlay"></div>
             <div class="destination-label">
-              <span>Dhaka</span>
-              <span class="destination-flag">🇧🇩</span>
+              <span>Nijhum Dwip</span>
+              <!-- <span class="destination-flag">🇧🇩</span> -->
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="trending-card destination-card-lg">
-            <img src="https://images.unsplash.com/photo-1624395149011-470cf6f6ec02?q=80&w=1051&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            <img
+              src="assets/img/place/noa-2.jpg"
               alt="Kuala Lumpur" class="destination-img">
             <div class="card-gradient-overlay"></div>
             <div class="destination-label">
-              <span>Kuala Lumpur</span>
-              <span class="destination-flag">🇲🇾</span>
+              <span>Bajra Shahi Mosque</span>
+              <!-- <span class="destination-flag">🇲🇾</span> -->
             </div>
           </div>
         </div>
@@ -768,36 +1173,38 @@
 
       <!-- Bottom Row: 3 Small Cards -->
       <div class="row g-4">
+        
         <div class="col-md-4">
           <div class="trending-card destination-card-sm">
-            <img src="https://plus.unsplash.com/premium_photo-1661963188068-1bac46e28727?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Bangkok" class="destination-img">
-            <div class="card-gradient-overlay"></div>
-            <div class="destination-label">
-              <span>Bangkok</span>
-              <span class="destination-flag">🇹🇭</span>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="trending-card destination-card-sm">
-            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=800&q=80"
+            <img  src="assets/img/place/monpura.jpg"
               alt="New Delhi" class="destination-img">
             <div class="card-gradient-overlay"></div>
             <div class="destination-label">
-              <span>New Delhi</span>
-              <span class="destination-flag">🇮🇳</span>
+              <span>Monpura Dwip</span>
+              <!-- <span class="destination-flag">🇮🇳</span> -->
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="trending-card destination-card-sm">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+            <img
+             src="assets/img/place/hatia dwip.jpg"
+              alt="Bangkok" class="destination-img">
+            <div class="card-gradient-overlay"></div>
+            <div class="destination-label">
+              <span>Hatia</span>
+              <!-- <span class="destination-flag">🇹🇭</span> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="trending-card destination-card-sm">
+            <img  src="assets/img/place/noa-5.jpg"
               alt="Dubai" class="destination-img">
             <div class="card-gradient-overlay"></div>
             <div class="destination-label">
-              <span>Dubai</span>
-              <span class="destination-flag">🇦🇪</span>
+              <span>Musapur</span>
+              <!-- <span class="destination-flag">🇦🇪</span> -->
             </div>
           </div>
         </div>
@@ -805,134 +1212,6 @@
     </div>
   </section>
 
-  <!-- Dining Summarization Section -->
-  <section class="dining-summary-section py-5 bg-white mb-5">
-    <div class="container py-md-5">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <div class="section-header mb-4">
-            <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Culinary Excellence</h6>
-            <h1 class="display-5 fw-bold mb-4">Dining at <br> Nice Guest House</h1>
-          </div>
-          <p class="text-muted lead mb-4">
-            Indulge in a world of flavor with our diverse menu featuring authentic Thai, Chinese, Indian, and local
-            Deshi delicacies. Whether you're seeking a scenic rooftop view or a refined indoor ambiance, our three
-            distinct restaurants offer an unforgettable dining experience.
-          </p>
-          <div class="row g-4 mb-5">
-            <div class="col-sm-6">
-              <div class="d-flex align-items-center">
-                <div class="feature-icon-box me-3"><i class="bi bi-egg-fried"></i></div>
-                <span class="fw-bold">3 Restaurants</span>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-center">
-                <div class="feature-icon-box me-3"><i class="bi bi-clouds"></i></div>
-                <span class="fw-bold">Rooftop View</span>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-center">
-                <div class="feature-icon-box me-3"><i class="bi bi-shield-check"></i></div>
-                <span class="fw-bold">Fresh & Hygienic</span>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-center">
-                <div class="feature-icon-box me-3"><i class="bi bi-building"></i></div>
-                <span class="fw-bold">7th Floor Dining</span>
-              </div>
-            </div>
-          </div>
-          <a href="restaurants.html" class="btn btn-primary btn-lg px-5 py-3 rounded-3 shadow-sm">
-            Explore Our Dining <i class="bi bi-arrow-right ms-2"></i>
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <div class="overlapping-image-container">
-            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
-              alt="NGH Restaurant Ambiance" class="main-image">
-            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
-              alt="Delicious Cuisine" class="secondary-image">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Honorable Clients Section -->
-  <section class="clients-summary-section py-5 bg-white">
-    <div class="container py-md-5">
-      <div class="row align-items-center g-5 flex-row-reverse">
-        <div class="col-lg-6">
-          <div class="section-header mb-4">
-            <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Trusted for 18+ Years</h6>
-            <h1 class="display-5 fw-bold mb-4">Our Honorable <br> Clients</h1>
-          </div>
-          <p class="text-muted lead mb-4">
-            Since 2007, Nice Guest House has been a trusted partner for global and national leaders. We take pride in
-            serving thousands of guests with unwavering commitment and professional hospitality.
-          </p>
-
-          <div class="row g-4 mb-5">
-            <div class="col-sm-6">
-              <div class="d-flex align-items-start">
-                <div class="feature-icon-box me-3"><i class="bi bi-globe"></i></div>
-                <div>
-                  <span class="fw-bold d-block">UN & International</span>
-                  <small class="text-muted text-truncate d-block" style="max-width: 200px;">WFP, USAID, JICA, Save the
-                    Children</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-start">
-                <div class="feature-icon-box me-3"><i class="bi bi-shield-check"></i></div>
-                <div>
-                  <span class="fw-bold d-block">National Giants</span>
-                  <small class="text-muted text-truncate d-block" style="max-width: 200px;">Square, Renata, Robi,
-                    Walton, Grameenphone</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-start">
-                <div class="feature-icon-box me-3"><i class="bi bi-people"></i></div>
-                <div>
-                  <span class="fw-bold d-block">NGO Partners</span>
-                  <small class="text-muted text-truncate d-block" style="max-width: 200px;">ActionAid, Solidaridad, DRC,
-                    RIC, PSTC</small>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="d-flex align-items-start">
-                <div class="feature-icon-box me-3"><i class="bi bi-briefcase"></i></div>
-                <div>
-                  <span class="fw-bold d-block">Corporate Leaders</span>
-                  <small class="text-muted text-truncate d-block" style="max-width: 200px;">Suzuki, City Bank, Abul
-                    Khair, IWM</small>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <a href="clients.html" class="btn btn-primary btn-lg px-5 py-3 rounded-3 shadow-sm">
-            View All Partners <i class="bi bi-arrow-right ms-2"></i>
-          </a>
-        </div>
-        <div class="col-lg-6">
-          <div class="overlapping-image-container image-left">
-            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
-              alt="NGH Corporate Event" class="main-image">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
-              alt="Professional Meeting" class="secondary-image">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- 3D 360 Viewer Modal -->
   <div class="modal fade" id="viewer3DModal" tabindex="-1" aria-hidden="true">
@@ -1107,38 +1386,57 @@
   <!-- Off-canvas Menu -->
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
     <div class="offcanvas-header border-bottom">
-      <h5 class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+      <div class="offcanvas-title" id="offcanvasMenuLabel">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="offcanvas-logo">
+      </div>
       <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-0">
-      <div class="d-grid gap-2 p-3 border-bottom d-lg-none">
-        <a href="#" class="btn btn-primary rounded-pill btn-signup">Sign Up</a>
+      <div class="p-3 border-bottom" id="mobile-auth-section">
+        <div class="row g-2">
+          <div class="col-6">
+            <a href="signup.html" class="btn btn-primary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-person-plus me-1"></i> Sign Up
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="signin.html" class="btn btn-outline-secondary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+            </a>
+          </div>
+        </div>
       </div>
       <ul class="nav flex-column menu-list">
         <li class="nav-item">
-          <a class="nav-link active" href="#"><i class="bi bi-house-door me-2"></i> Home</a>
+          <a class="nav-link active" href="index.html"><i class="bi bi-house-door me-2"></i> Home</a>
+        </li>
+        <!-- <li class="nav-item">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a>
+        </li>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="conference.html"><i class="bi bi-building me-2"></i> Conference Hall</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-info-circle me-2"></i> About Us</a>
+          <a class="nav-link" href="rooms.html"><i class="bi bi-door-closed me-2"></i> Rooms</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-egg-fried me-2"></i> Restaurants</a>
+          <a class="nav-link" href="restaurant.html"><i class="bi bi-egg-fried me-2"></i> Restaurants</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-building me-2"></i> Conference Hall</a>
+          <a class="nav-link" href="our-clients.html"><i class="bi bi-people me-2"></i> Our Honorable Clients</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-people me-2"></i> Our Honorable Clients</a>
+          <a class="nav-link" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-door-closed me-2"></i> Rooms</a>
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-images me-2"></i> Gallery</a>
+          <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="bi bi-envelope me-2"></i> Contact us</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
             href="#mobileLangMenu" role="button" aria-expanded="false" aria-controls="mobileLangMenu">
@@ -1147,132 +1445,30 @@
           </a>
           <div class="collapse" id="mobileLangMenu">
             <ul class="nav flex-column bg-light ps-4">
-              <li class="nav-item"><a class="nav-link py-2" href="#">English</a></li>
-              <li class="nav-item"><a class="nav-link py-2" href="#">Bengali</a></li>
-              <li class="nav-item"><a class="nav-link py-2" href="#">Hindi</a></li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="javascript:void(0);" onclick="changeLanguage('en')">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-flag me-2"> English
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="javascript:void(0);" onclick="changeLanguage('bn')">
+                  <img src="https://flagcdn.com/w40/bd.png" alt="Bengali" class="lang-flag me-2"> Bengali
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="javascript:void(0);" onclick="changeLanguage('hi')">
+                  <img src="https://flagcdn.com/w40/in.png" alt="Hindi" class="lang-flag me-2"> Hindi
+                </a>
+              </li>
             </ul>
           </div>
         </li>
-        <li class="nav-item">
-          <a class="nav-link nav-brand-link" href="#"><i class="bi bi-geo-alt me-2"></i> Nice Guest House 2</a>
+        <li class="nav-item" id="mobile-signout-item" style="display:none;">
+          <a class="nav-link text-danger fw-bold" id="mobileSignOut" href="#"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a>
         </li>
       </ul>
     </div>
   </div>
-  <!-- Contact Section -->
-  <section id="contact" class="contact-section py-5 bg-white">
-    <div class="container py-md-5">
-      <div class="row align-items-end mb-5">
-        <div class="col-lg-7">
-          <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">Get In Touch</h6>
-          <h1 class="display-5 fw-bold mb-0">Contact Information</h1>
-        </div>
-        <div class="col-lg-5 text-lg-end">
-          <p class="text-muted mb-0 pe-lg-4">We are committed to serving you with our expert team members. You will feel
-            at home with all our premium facilities.</p>
-        </div>
-      </div>
-
-      <div class="row g-5 align-items-center">
-        <!-- Contact Info (Modern White Box) -->
-        <div class="col-lg-5">
-          <div class="contact-info-block white-variant shadow-sm">
-            <h3 class="fw-bold mb-4">Our Presence</h3>
-
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="bi bi-geo-alt-fill"></i></div>
-              <div class="contact-item-content">
-                <h6>Main Branch (NGH-1)</h6>
-                <p>Uzzalpur, Maijdee Court, Sadar<br>Noakhali, Bangladesh.</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="bi bi-geo-alt"></i></div>
-              <div class="contact-item-content">
-                <h6>Guesthouse-2 (NGH-2)</h6>
-                <p>Main Road, Uzzalpur, Maijdee Court<br>Sadar, Noakhali.</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="bi bi-telephone-fill"></i></div>
-              <div class="contact-item-content">
-                <h6>Call Us</h6>
-                <p>+880-0321-61658</p>
-                <p>+880-1711-781340</p>
-                <p>+8801622277023</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="bi bi-envelope-fill"></i></div>
-              <div class="contact-item-content">
-                <h6>Email Us</h6>
-                <p>niceguesthouse.th@gmail.com</p>
-                <p>niceguesthouse2.th@gmail.com</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-item-icon"><i class="bi bi-link-45deg"></i></div>
-              <div class="contact-item-content">
-                <h6>Website</h6>
-                <p>www.niceguesthouse.info</p>
-              </div>
-            </div>
-
-            <div class="mt-4">
-              <p class="mb-0 small"><i class="bi bi-clock me-2"></i> Reception: 24h Available</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="col-lg-7">
-          <div class="contact-form-card shadow-sm">
-            <div class="mb-4">
-              <h3 class="fw-bold mb-2">Send us a message</h3>
-              <p class="text-muted">We are welcome to NGH. Feel at home with all our expert team members.</p>
-            </div>
-
-            <form action="#">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label fw-semibold">Your name</label>
-                  <input type="text" class="form-control" placeholder="John Doe">
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label fw-semibold">Your e-mail</label>
-                  <input type="email" class="form-control" placeholder="john@example.com">
-                </div>
-                <div class="col-12">
-                  <label class="form-label fw-semibold">Subject</label>
-                  <input type="text" class="form-control" placeholder="How can we help?">
-                </div>
-                <div class="col-12">
-                  <label class="form-label fw-semibold">Message</label>
-                  <textarea class="form-control" rows="5" placeholder="Write your message here..."></textarea>
-                </div>
-                <div class="col-12 pt-3">
-                  <button type="submit" class="btn btn-primary btn-lg w-100">
-                    Send Message <i class="bi bi-send ms-2"></i>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Map Section -->
-  <section class="map-section">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3183.6448475657526!2d91.09366391010211!3d22.848709622709144!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3754a53e012d7b89%3A0x3ec0fd442b458cd3!2sNice%20Guest%20House%2C%20Training%20Hall%20%26%20Dolna%20Food%20Heaven%20(Hotel%20in%20Noakhali)!5e1!3m2!1sen!2sbd!4v1749283641246!5m2!1sen!2sbd"
-      allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </section>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -1286,10 +1482,9 @@
             heart of Noakhali since 2007.
           </p>
           <div class="social-links">
-            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/NGHNOAKHALI" class="social-link" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=2fpsh9s6ebM" class="social-link" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g6602003-d4764267-Reviews-Nice_Guest_House_Training_Hall_and_Dolna_Food_Heaven-Noakhali_Chittagong_Division.html" class="social-link" target="_blank"><i class="fa fa-tripadvisor"></i></a>
           </div>
         </div>
 
@@ -1297,11 +1492,11 @@
         <div class="col-6 col-md-3 col-lg-2">
           <h5 class="footer-heading">Navigate</h5>
           <ul class="footer-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Rooms</a></li>
-            <li><a href="#">Restaurants</a></li>
-            <li><a href="#">Conference</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="restaurant.html">Restaurants</a></li>
+            <li><a href="conference.html">Conference</a></li>
           </ul>
         </div>
 
@@ -1309,11 +1504,11 @@
         <div class="col-6 col-md-3 col-lg-2">
           <h5 class="footer-heading">Useful Info</h5>
           <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
           </ul>
         </div>
 
@@ -1346,20 +1541,16 @@
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-  <!-- AOS Animation Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  </script>
 
   <!-- Bootstrap 5.3.3 JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- jQuery (Required for Slick) -->
+  <!-- jQuery (Required for Slick and Select2) -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  
+  <!-- Select2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  
   <!-- Slick Slider JS -->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -1373,6 +1564,52 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
 
+  <!-- Google Translate -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,bn,hi',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+      var select = document.querySelector('select.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      }
+      
+      // Cookie-based backup for persistence and reliability
+      document.cookie = "googtrans=/en/" + langCode + "; path=/";
+      
+      // If the select isn't found, we try to reload to let Google Translate pick up the cookie
+      if (!select) {
+        window.location.reload();
+      }
+    }
+
+    // Aggressive JS hide for Google Translate Banner
+    setInterval(function() {
+      var banner = document.querySelector('.goog-te-banner-frame');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.style.visibility = 'hidden';
+      }
+      document.body.style.top = '0px';
+      
+      var skipTranslate = document.querySelectorAll('.skiptranslate');
+      skipTranslate.forEach(function(el) {
+        if (!el.querySelector('select')) { // Don't hide the element if it contains our control (though our control is hidden elsewhere)
+           el.style.display = 'none';
+        }
+      });
+    }, 500);
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

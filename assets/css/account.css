@@ -1,0 +1,257 @@
+/* ==========================================================================
+   User Account Page Styles
+   ========================================================================== */
+
+.account-section {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.account-sidebar {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 100px;
+}
+
+.user-profile-summary {
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-avatar-lg {
+    width: 88px;
+    height: 88px;
+    background: linear-gradient(135deg, #f76156, #ff9a8b);
+    color: #fff;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(247, 97, 86, 0.3);
+}
+
+.account-nav .nav-link {
+    color: #555;
+    padding: 11px 16px;
+    border-radius: 12px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+}
+
+.account-nav .nav-link i {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    width: 20px;
+}
+
+.account-nav .nav-link:hover,
+.account-nav .nav-link.active {
+    background-color: rgba(247, 97, 86, 0.1);
+    color: #f76156;
+}
+
+/* Content Cards */
+.account-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    margin-bottom: 24px;
+}
+
+.account-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #222;
+    display: flex;
+    align-items: center;
+}
+
+.account-card-title i {
+    color: #f76156;
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+/* Stats Row */
+.stat-badge {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-align: center;
+    flex: 1;
+}
+
+.stat-badge .stat-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f76156;
+    display: block;
+}
+
+.stat-badge .stat-label {
+    font-size: 0.78rem;
+    color: #888;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Profile Inputs */
+.profile-input {
+    border: 2px solid #f0f0f0 !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+    transition: all 0.25s ease !important;
+    background-color: #fafafa !important;
+}
+
+.profile-input:focus {
+    border-color: #f76156 !important;
+    background-color: #fff !important;
+    box-shadow: 0 4px 12px rgba(247, 97, 86, 0.1) !important;
+}
+
+/* Booking Items */
+.booking-item {
+    border: 1.5px solid #eee;
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+.booking-item:hover {
+    border-color: #f76156;
+    box-shadow: 0 6px 20px rgba(247, 97, 86, 0.08);
+    transform: translateY(-1px);
+}
+
+.booking-status {
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.status-confirmed { background: #e6f7ef; color: #10b981; }
+.status-pending    { background: #fffbeb; color: #f59e0b; }
+.status-cancelled  { background: #fef2f2; color: #ef4444; }
+
+/* Favorite Items */
+.fav-item {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    background: #fff;
+    margin-bottom: 16px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fav-item:last-child { margin-bottom: 0; }
+
+.fav-item:hover {
+    border-color: #f76156;
+    box-shadow: 0 10px 25px rgba(247, 97, 86, 0.08);
+    transform: translateY(-2px);
+}
+
+.fav-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.fav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 15px;
+}
+
+.btn-view-fav {
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-remove-fav {
+    width: 36px;
+    height: 36px;
+    color: #888;
+    background: #f8f9fa;
+    border: 1px solid #eee;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+}
+
+.btn-remove-fav:hover {
+    color: #fff;
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: rotate(15deg);
+}
+
+/* Save Changes Button */
+.btn-save-profile {
+    background: linear-gradient(135deg, #f76156, #ff9a8b);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 36px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(247, 97, 86, 0.3);
+}
+
+.btn-save-profile:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(247, 97, 86, 0.4);
+}
+
+@media (max-width: 991px) {
+    .account-sidebar {
+        margin-bottom: 24px;
+        position: static;
+    }
+    .account-card {
+        padding: 24px;
+    }
+}

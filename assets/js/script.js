@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mode: "range",
         dateFormat: "Y-m-d",
         minDate: "today",
-        showMonths: 2,
+        showMonths: window.innerWidth < 768 ? 1 : 2,
         appendTo: document.querySelector('.hero-search-wrapper'),
         onOpen: function (selectedDates, dateStr, instance) {
             const wrapper = document.querySelector('.hero-search-wrapper');
@@ -259,6 +259,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 instance.calendarContainer.classList.add('flip-top-calendar');
             } else {
                 instance.calendarContainer.classList.remove('flip-top-calendar');
+            }
+        },
+        onReady: function(selectedDates, dateStr, instance) {
+            // Initialize Select2 on the month dropdown for mobile views
+            if (window.innerWidth < 768) {
+                const $monthDropdowns = $(instance.calendarContainer).find('.flatpickr-monthDropdown-months');
+                if ($monthDropdowns.length && $.fn.select2) {
+                    $monthDropdowns.select2({
+                        minimumResultsForSearch: Infinity,
+                        dropdownParent: $(instance.calendarContainer),
+                        width: 'auto'
+                    });
+                    
+                    // Propagate Select2 changes back to Flatpickr
+                    $monthDropdowns.on('select2:select', function (e) {
+                        this.dispatchEvent(new Event('change'));
+                    });
+                }
+            }
+        },
+        onMonthChange: function(selectedDates, dateStr, instance) {
+            if (window.innerWidth < 768) {
+                const $monthDropdowns = $(instance.calendarContainer).find('.flatpickr-monthDropdown-months');
+                if ($monthDropdowns.length && $monthDropdowns.hasClass('select2-hidden-accessible')) {
+                    $monthDropdowns.val(instance.currentMonth).trigger('change.select2');
+                }
+            }
+        },
+        onYearChange: function(selectedDates, dateStr, instance) {
+            if (window.innerWidth < 768) {
+                const $monthDropdowns = $(instance.calendarContainer).find('.flatpickr-monthDropdown-months');
+                if ($monthDropdowns.length && $monthDropdowns.hasClass('select2-hidden-accessible')) {
+                    $monthDropdowns.val(instance.currentMonth).trigger('change.select2');
+                }
             }
         },
         onChange: function (selectedDates, dateStr, instance) {
@@ -328,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Featured Offers Slider Initialization ---
-    $('.offers-slider').slick({
+    $('.offers-slider, .available-offers-slider').slick({
         dots: false,
         infinite: true,
         speed: 600,
@@ -471,5 +505,151 @@ document.addEventListener('DOMContentLoaded', function () {
                 panoramaViewer = null;
             }
         });
+    }
+});
+
+// =============================================================
+// --- Demo Auth State Management ---
+// =============================================================
+function updateNavbarAuthState() {
+    const isLoggedIn = localStorage.getItem('ngh_logged_in') === 'true';
+    const userName = localStorage.getItem('ngh_user_name') || 'Account';
+    const userInitial = userName.charAt(0).toUpperCase();
+
+    const authBtnWrapper = document.getElementById('auth-btn-wrapper');
+    if (!authBtnWrapper) return;
+
+    if (isLoggedIn) {
+        authBtnWrapper.innerHTML = `
+            <div class="dropdown">
+                <button class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-2 px-3 py-2 text-white"
+                    type="button" id="accountNavDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="border:none;">
+                    <i class="bi bi-person-circle fs-6"></i>
+                    <span class="fw-medium">${userName}</span>
+                    <i class="bi bi-chevron-down ms-1" style="font-size:0.75rem;"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-2 mt-3" aria-labelledby="accountNavDropdown" style="min-width:190px;border-radius:14px;">
+                    <li class="px-3 pt-2 pb-3 border-bottom mb-1">
+                        <div class="d-flex align-items-center">
+                            <div style="width:38px;height:38px;background:linear-gradient(135deg,#f76156,#ff9a8b);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1rem;flex-shrink:0;">${userInitial}</div>
+                            <div class="ms-2">
+                                <div class="fw-bold" style="font-size:0.88rem;">${userName}</div>
+                                <div class="text-muted" style="font-size:0.72rem;">NGH Member</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a class="dropdown-item py-2 px-3" style="font-size:0.88rem;" href="account.html"><i class="bi bi-speedometer2 me-2 text-primary"></i>Dashboard</a></li>
+                    <li><a class="dropdown-item py-2 px-3" style="font-size:0.88rem;" href="account.html?tab=bookings"><i class="bi bi-calendar-check me-2 text-primary"></i>My Bookings</a></li>
+                    <li><a class="dropdown-item py-2 px-3" style="font-size:0.88rem;" href="account.html?tab=favorites"><i class="bi bi-heart me-2 text-danger"></i>Favorites</a></li>
+                    <li><hr class="dropdown-divider my-1"></li>
+                    <li><a class="dropdown-item py-2 px-3 text-danger" style="font-size:0.88rem;" href="#" id="signOutBtn"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+                </ul>
+            </div>`;
+
+        document.getElementById('signOutBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('ngh_logged_in');
+            localStorage.removeItem('ngh_user_name');
+            localStorage.removeItem('ngh_user_email');
+            window.location.href = 'index.html';
+        });
+    } else {
+        authBtnWrapper.innerHTML = `
+            <div class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-1 p-0 overflow-hidden ps-3 pe-3">
+                <a href="signup.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-person-plus me-1"></i> Sign Up</a>
+                <span class="text-white-50">|</span>
+                <a href="signin.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
+            </div>`;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateNavbarAuthState);
+
+// =========================================================
+// Mobile Off-Canvas Auth Section (mirrors desktop)
+// =========================================================
+function updateMobileAuthSection() {
+    const isLoggedIn = localStorage.getItem('ngh_logged_in') === 'true';
+    const userName = localStorage.getItem('ngh_user_name') || 'Account';
+    const userInitial = userName.charAt(0).toUpperCase();
+    const mobileAuthSection = document.getElementById('mobile-auth-section');
+    const mobileSignOutItem = document.getElementById('mobile-signout-item');
+
+    if (!mobileAuthSection) return;
+
+    if (isLoggedIn) {
+        mobileAuthSection.innerHTML = `
+            <div class="d-flex align-items-center gap-3 py-1">
+                <div style="width:42px;height:42px;background:linear-gradient(135deg,#f76156,#ff9a8b);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.1rem;flex-shrink:0;">${userInitial}</div>
+                <div>
+                    <div class="fw-bold" style="font-size:0.9rem;">${userName}</div>
+                    <div class="text-muted" style="font-size:0.75rem;">NGH Member</div>
+                </div>
+                <a href="account.html" class="mobile-dashboard-btn ms-auto">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+            </div>`;
+        if (mobileSignOutItem) mobileSignOutItem.style.display = '';
+        const mobileSignOutBtn = document.getElementById('mobileSignOut');
+        if (mobileSignOutBtn) {
+            mobileSignOutBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('ngh_logged_in');
+                localStorage.removeItem('ngh_user_name');
+                localStorage.removeItem('ngh_user_email');
+                window.location.href = 'index.html';
+            });
+        }
+    } else {
+        mobileAuthSection.innerHTML = `
+            <div class="row g-2">
+                <div class="col-6">
+                    <a href="signup.html" class="btn btn-primary rounded-pill w-100 btn-sm py-2">
+                        <i class="bi bi-person-plus me-1"></i> Sign Up
+                    </a>
+                </div>
+                <div class="col-6">
+                    <a href="signin.html" class="btn btn-outline-secondary rounded-pill w-100 btn-sm py-2">
+                        <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+                    </a>
+                </div>
+            </div>`;
+        if (mobileSignOutItem) mobileSignOutItem.style.display = 'none';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', updateMobileAuthSection);
+
+// =========================================================
+// Mobile Search Modal Logic
+// =========================================================
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileSearchTrigger = document.getElementById('mobileSearchTrigger');
+    const mobileSearchTriggerRooms = document.getElementById('mobileSearchTriggerRooms');
+    const mobileSearchClose = document.getElementById('mobileSearchClose');
+    const mobileSearchCloseRooms = document.getElementById('mobileSearchCloseRooms');
+
+    function openSearchModal() {
+        document.body.classList.add('search-modal-open');
+    }
+
+    function closeSearchModal() {
+        document.body.classList.remove('search-modal-open');
+    }
+
+    if (mobileSearchTrigger) {
+        mobileSearchTrigger.addEventListener('click', openSearchModal);
+    }
+    
+    if (mobileSearchTriggerRooms) {
+        mobileSearchTriggerRooms.addEventListener('click', openSearchModal);
+    }
+
+    if (mobileSearchClose) {
+        mobileSearchClose.addEventListener('click', closeSearchModal);
+    }
+    
+    if (mobileSearchCloseRooms) {
+        mobileSearchCloseRooms.addEventListener('click', closeSearchModal);
     }
 });

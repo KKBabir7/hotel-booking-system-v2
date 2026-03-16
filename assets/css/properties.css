@@ -1,0 +1,190 @@
+/* ==========================================================================
+   Properties Page Styles - Multi-Location Support
+   ========================================================================== */
+
+.properties-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background: url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.properties-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.properties-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+}
+
+.properties-hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.properties-hero-tagline {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.property-grid-section {
+    padding: 0 0 100px 0;
+  
+    margin-top: -120px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Property Selection Cards */
+.property-card-premium {
+    background: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    height: 100%;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card-premium:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+}
+
+.property-img-wrapper {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.property-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.property-card-premium:hover .property-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.location-badge {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-brand);
+    z-index: 5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.property-card-content {
+    padding: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.property-card-content h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text-dark-alt);
+    letter-spacing: -0.5px;
+}
+
+.property-card-content p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.feature-icon-box {
+    width: 42px;
+    height: 42px;
+    background: rgba(var(--primary-rgb), 0.08);
+    color: var(--primary-brand);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-item:hover .feature-icon-box {
+    background: var(--primary-brand);
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.25);
+}
+
+.feature-item span {
+    white-space: nowrap;
+}
+
+.btn-property-explore {
+    margin-top: auto;
+    background: var(--primary-brand);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(224, 161, 60, 0.2);
+}
+
+.btn-property-explore:hover {
+    background: #c98a2b;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(224, 161, 60, 0.3);
+    color: #fff;
+}

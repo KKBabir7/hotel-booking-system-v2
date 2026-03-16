@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oceanfront Infinity Villa - Nice Guest House</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+  
+  
+  
+
+  <!-- Flatpickr for Date Range -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  
+  <!-- Select2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  
+  <!-- Slick Slider for Related Rooms -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+
+  <!-- Pannellum for 360-degree view -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css" />
+
+  <!-- PhotoSwipe v5 for Gallery Zooming -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/root.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+
+<body class="">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-md-4 transition-all sticky-nav-dark" id="main-nav">
+    <div class="container-fluid px-md-5">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="navbar-logo">
+      </a>
+
+      <!-- Desktop Horizontal Menu -->
+      <div class="d-none d-lg-flex flex-grow-1 justify-content-end align-items-center desktop-menu">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"><i class="bi bi-house-door me-1"></i> Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="restaurant.html" class="nav-link"><i class="bi bi-egg-fried me-1"></i> Restaurants</a>
+          </li>
+          <li class="nav-item">
+            <a href="conference.html" class="nav-link"><i class="bi bi-building me-1"></i> Conference Hall</a>
+          </li>
+          <li class="nav-item">
+            <a href="rooms.html" class="nav-link active"><i class="bi bi-door-closed me-1"></i> Rooms</a>
+          </li>
+        </ul>
+
+        <!-- Auth Button (dynamic via JS) -->
+        <div id="auth-btn-wrapper" class="d-flex align-items-center">
+          <div class="btn btn-primary rounded-pill btn-signup ms-3 d-flex align-items-center gap-1 p-0 overflow-hidden ps-3 pe-3">
+            <a href="signup.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-person-plus me-1"></i> Sign Up</a>
+            <span class="text-white-50">|</span>
+            <a href="signin.html" class="text-white text-decoration-none px-1 py-2"><i class="bi bi-box-arrow-in-right me-1"></i> Log In</a>
+          </div>
+        </div>
+
+        <!-- Desktop Dropdown Menu -->
+        <div class="dropdown desktop-dropdown d-none d-lg-block ms-2">
+          <button class="btn btn-menu-toggle animated-burger-btn" type="button" id="desktopMenuDropdown"
+            aria-expanded="false">
+            <div class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 py-3 mt-3 p-0" aria-labelledby="desktopMenuDropdown">
+            <li><a class="dropdown-item py-2 px-4" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a></li>
+            <li><a class="dropdown-item py-2 px-4" href="our-clients.html"><i class="bi bi-people me-2"></i> Honorable Clients</a></li>
+            <li><a class="dropdown-item py-2 px-4" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact</a></li>
+            <li><a class="dropdown-item py-2 px-4" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a></li>
+            <li><hr class="dropdown-divider mx-3"></li>
+            <li class="dropdown-submenu px-3">
+              <a class="dropdown-item dropdown-toggle py-2 px-2 d-flex align-items-center justify-content-between" href="#" id="languageMenu">
+                <span><i class="bi bi-translate me-2"></i> Language</span>
+              </a>
+              <ul class="dropdown-menu shadow border-0 py-2 p-0">
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-flag me-2"> English</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/bd.png" alt="Bengali" class="lang-flag me-2"> Bengali</a></li>
+                <li><a class="dropdown-item py-2 px-4" href="#"><img src="https://flagcdn.com/w40/in.png" alt="Hindi" class="lang-flag me-2"> Hindi</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center d-lg-none ms-auto gap-2">
+        <a href="rooms.html" class="btn-book-now-mobile"><i class="bi bi-door-open"></i> Book Now</a>
+        <button class="btn btn-menu-toggle animated-burger-btn" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+          <div class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section class="room-gallery-section pt-5">
+    <div class="container-fluid px-md-5 pt-5">
+      <div class="d-flex flex-wrap justify-content-between align-items-center align-items-md-end gap-3 mb-3 pt-5">
+        <div class="room-title-area">
+          <nav aria-label="breadcrumb" class="mb-2">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item"><a href="index.html" class="text-primary text-decoration-none">Home</a></li>
+              <li class="breadcrumb-item"><a href="rooms.html" class="text-primary text-decoration-none">Rooms</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Oceanfront Infinity Villa</li>
+            </ol>
+          </nav>
+          <h2 class="fw-bold mb-0">Oceanfront Infinity Villa</h2>
+          <p class="text-muted small mb-0"><i class="bi bi-geo-alt me-1"></i> Maldives, Indian Ocean</p>
+        </div>
+        <div class="d-flex gap-2 room-actions">
+          <button class="btn btn-outline-dark btn-sm rounded-pill px-3 action-btn"><i class="bi bi-share me-md-1"></i> <span class="d-none d-md-inline">Share</span></button>
+          <button class="btn btn-outline-dark btn-sm rounded-pill px-3 action-btn"><i class="bi bi-heart me-md-1"></i> <span class="d-none d-md-inline">Save</span></button>
+        </div>
+      </div>
+
+      <div class="gallery-grid rounded-4 overflow-hidden shadow-sm" id="room-gallery">
+        <div class="gallery-main">
+          <a href="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=90" data-pswp-width="1600" data-pswp-height="1066" target="_blank" class="gallery-link">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Main Room Image" class="gallery-img active">
+          </a>
+        </div>
+        <div class="gallery-side grid-2x2">
+          <a href="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1600&q=90" data-pswp-width="1600" data-pswp-height="1066" target="_blank" class="gallery-link">
+            <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Side 1" class="gallery-img">
+          </a>
+          <a href="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1600&q=90" data-pswp-width="1600" data-pswp-height="1066" target="_blank" class="gallery-link">
+            <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Side 2" class="gallery-img">
+          </a>
+          <a href="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1600&q=90" data-pswp-width="1600" data-pswp-height="1066" target="_blank" class="gallery-link">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=600&q=80" alt="Side 3" class="gallery-img">
+          </a>
+          <div class="position-relative">
+            <a href="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1600&q=90" data-pswp-width="1600" data-pswp-height="1066" target="_blank" class="gallery-link h-100 d-block">
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Side 4" class="gallery-img">
+            </a>
+            <button class="btn btn-light btn-sm position-absolute bottom-0 end-0 m-3 shadow-sm rounded-3 fw-bold" id="openMainGallery">
+              <i class="bi bi-grid-3x3-gap me-1"></i> Show all photos
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="room-content-section py-5">
+    <div class="container-fluid px-md-5">
+      <div class="row g-5 room-content-row">
+        <!-- Left Column: Details -->
+        <div class="col-lg-8">
+          <div class="room-intro border-bottom pb-4 mb-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <h4 class="fw-bold">Experience Luxury in our Infinity Villa</h4>
+                <div class="d-flex align-items-center gap-3 text-muted small">
+                  <span>6 Guests · 3 Bedrooms · 3 Beds · 3.5 Bathrooms</span>
+                </div>
+              </div>
+              <div class="rating-box d-flex align-items-center flex-column rounded-1">
+                <div class="rating-badge  d-flex align-items-center gap-2">
+                  <i class="bi bi-star-fill text-warning fs-5"></i>
+                  <span class="fw-bold fs-6 mb-0 text-white">4.92</span>
+                </div>
+                <a style="font-size: 10px;"  href="#reviews-tab-linkss" class="text-dark text-decoration-underline " id="jumpToReviews">128 Reviews</a>
+              </div>
+            </div>
+            
+            <div class="feature-highlights d-flex flex-wrap gap-4 pt-3">
+              <div class="highlight-item d-flex align-items-center">
+                <div class="highlight-icon me-3 bg-white shadow-sm rounded-3">
+                  <i class="bi bi-door-open fs-4 text-primary"></i>
+                </div>
+                <div>
+                  <div class="fw-bold small">Self check-in</div>
+                  <div class="text-muted extra-small">Check yourself in with the keypad.</div>
+                </div>
+              </div>
+              <div class="highlight-item d-flex align-items-center">
+                <div class="highlight-icon me-3 bg-white shadow-sm rounded-3">
+                  <i class="bi bi-geo-alt fs-4 text-primary"></i>
+                </div>
+                <div>
+                  <div class="fw-bold small">Great location</div>
+                  <div class="text-muted extra-small">100% of guest rated the location 5-star.</div>
+                </div>
+              </div>
+              <div class="highlight-item d-flex align-items-center">
+                <div class="highlight-icon me-3 bg-white shadow-sm rounded-3">
+                  <i class="bi bi-calendar-check fs-4 text-primary"></i>
+                </div>
+                <div>
+                  <div class="fw-bold small">Free cancellation</div>
+                  <div class="text-muted extra-small">Full refund before 48 hours.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description Tabs -->
+          <div class="room-tabs mb-5">
+            <ul class="nav nav-pills mb-3 border-bottom pb-2" id="roomTabs" role="tablist">
+              <li class="nav-item">
+                <button class="nav-link active fw-bold" id="desc-tab" data-bs-toggle="pill" data-bs-target="#desc" type="button">Description</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-bold" id="policy-tab" data-bs-toggle="pill" data-bs-target="#policy" type="button">Room Rules</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-bold" id="reviews-tab-link" type="button">Reviews</button>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link fw-bold" id="faq-tab" data-bs-toggle="pill" data-bs-target="#faq" type="button">FAQs</button>
+              </li>
+            </ul>
+            <div class="tab-content pt-2" id="roomTabsContent">
+              <div class="tab-pane fade show active" id="desc">
+                <p class="text-muted">Perfectly suited for families or groups, our Oceanfront Infinity Villa offers a cozy and comfortable space with a soothing view of natural scenery to enhance your stay. Ideal for romantic getaways or restful retreats.</p>
+                <div class="row pt-2 g-3">
+                  <div class="col-sm-6">
+                    <ul class="list-unstyled text-muted small">
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Bed: 3 Couple Bed</li>
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Capacity: 6 Adults</li>
+                    </ul>
+                  </div>
+                  <div class="col-sm-6">
+                    <ul class="list-unstyled text-muted small">
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> View: Natural Scenery (Ocean)</li>
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i> Room Size: 80 sqm / 860 sqft</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="policy">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6 class="fw-bold mb-3">Check-in / Check-out</h6>
+                    <ul class="list-unstyled text-muted small">
+                      <li class="mb-2"><i class="bi bi-clock me-2"></i> Check-in: 12:00 PM</li>
+                      <li class="mb-2"><i class="bi bi-clock-history me-2"></i> Check-out: 11:30 AM</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <h6 class="fw-bold mb-3">House Rules</h6>
+                    <ul class="list-unstyled text-muted small">
+                      <li class="mb-2"><i class="bi bi-slash-circle me-2"></i> No smoking inside</li>
+                      <li class="mb-2"><i class="bi bi-dash-circle me-2"></i> No pets allowed</li>
+                      <li class="mb-2"><i class="bi bi-volume-mute me-2"></i> Quiet hours after 10 PM</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="faq">
+                <div class="accordion accordion-flush" id="faqAccordion">
+                  <div class="accordion-item border-0 bg-transparent">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-transparent px-0 fw-bold border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#q1">
+                        How close is the private beach?
+                      </button>
+                    </h2>
+                    <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body px-0 text-muted small">
+                        The private beach is exactly 50 meters away from the villa entrance through a private walkway.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item border-0 bg-transparent">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed bg-transparent px-0 fw-bold border-bottom" type="button" data-bs-toggle="collapse" data-bs-target="#q2">
+                        Is breakfast included in the booking?
+                      </button>
+                    </h2>
+                    <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                      <div class="accordion-body px-0 text-muted small">
+                        Yes, a full continental breakfast is included for all guests during their entire stay.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="amenities-section mb-5">
+            <h5 class="fw-bold mb-4">What this place offers</h5>
+            <div class="row g-4 amenity-grid">
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-droplet me-3 fs-5"></i>
+                  <span class="small">Welcome Drinks</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-wifi me-3 fs-5"></i>
+                  <span class="small">Free Wi-Fi</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-water me-3 fs-5"></i>
+                  <span class="small">Hot Tub</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-tv me-3 fs-5"></i>
+                  <span class="small">LED TV</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-wind me-3 fs-5"></i>
+                  <span class="small">Air Conditioning</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <div class="amenity-item d-flex align-items-center">
+                  <i class="bi bi-box-seam me-3 fs-5"></i>
+                  <span class="small">Mini Bar</span>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-outline-dark rounded-pill px-4 mt-4 fw-bold shadow-none" data-bs-toggle="modal" data-bs-target="#amenitiesModal">Show all 32 amenities</button>
+          </div>
+
+          <!-- Detailed Reviews Section -->
+          <div class="reviews-section py-5 border-top">
+            <div class="d-flex align-items-center gap-2 mb-4">
+              <i class="bi bi-star-fill text-warning fs-4"></i>
+              <h4 class="fw-bold mb-0" id="reviews-tab-linkss">4.92 · 128 Reviews</h4>
+            </div>
+
+            <!-- Rating Breakdown Grid -->
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Cleanliness</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 98%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">4.9</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Accuracy</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 100%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">5.0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Communication</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 96%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">4.8</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Location</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 100%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">5.0</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Check-in</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 98%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">4.9</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="text-muted small">Value</span>
+                  <div class="d-flex align-items-center gap-3 w-50">
+                    <div class="progress flex-grow-1" style="height: 4px;">
+                      <div class="progress-bar bg-dark" style="width: 94%;"></div>
+                    </div>
+                    <span class="extra-small fw-bold">4.7</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Individual Guest Reviews -->
+            <div class="row g-5 guest-reviews-list">
+              <div class="col-md-6 review-item">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="https://i.pravatar.cc/150?u=1" class="rounded-circle me-3" width="48" height="48" alt="Guest Avatar">
+                  <div>
+                    <h6 class="fw-bold mb-0">Sarah Jenkins</h6>
+                    <div class="text-muted extra-small">March 2024 · Verified Guest</div>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">The view from the infinity villa is breathtaking! Everything was sparkling clean, and the staff was incredibly helpful with our early check-in. Highly recommend!</p>
+              </div>
+              <div class="col-md-6 review-item">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="https://i.pravatar.cc/150?u=2" class="rounded-circle me-3" width="48" height="48" alt="Guest Avatar">
+                  <div>
+                    <h6 class="fw-bold mb-0">David Miller</h6>
+                    <div class="text-muted extra-small">February 2024 · Verified Guest</div>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">Perfect location for a honeymoon. Private beach access was a game changer. The room service was slightly slow one night, but overall experience was 10/10.</p>
+              </div>
+              <div class="col-md-6 review-item">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="https://i.pravatar.cc/150?u=3" class="rounded-circle me-3" width="48" height="48" alt="Guest Avatar">
+                  <div>
+                    <h6 class="fw-bold mb-0">Emma Watson</h6>
+                    <div class="text-muted extra-small">January 2024 · Verified Guest</div>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">Best guest house I've ever stayed at! The design is so modern and the beds are incredibly comfy. Will definitely be coming back next year.</p>
+              </div>
+              <div class="col-md-6 review-item">
+                <div class="d-flex align-items-center mb-3">
+                  <img src="https://i.pravatar.cc/150?u=4" class="rounded-circle me-3" width="48" height="48" alt="Guest Avatar">
+                  <div>
+                    <h6 class="fw-bold mb-0">Robert Downey</h6>
+                    <div class="text-muted extra-small">December 2023 · Verified Guest</div>
+                  </div>
+                </div>
+                <p class="text-muted small mb-0">Excellent amenities and the communication was top-notch right from booking to checkout. A truly premium experience.</p>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-dark rounded-pill px-4 mt-5 fw-bold shadow-none" id="showMoreReviews">Show more reviews</button>
+          </div>
+        </div>
+
+        <!-- Right Column: Sticky Booking Card -->
+        <div class="col-lg-4 booking-sidebar-column">
+          <div class="booking-card shadow p-4 rounded-4 bg-white sticky-top" style="top: 100px;">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+              <div>
+                <span class="h4 fw-bold mb-0 text-dark">$299</span>
+                <span class="text-muted small">/ night</span>
+              </div>
+            </div>
+
+            <form id="bookingFormSidebar">
+              <div class="booking-inputs border rounded-3 mb-3">
+                <div class="row g-0">
+                  <div class="col-12 border-bottom p-3">
+                    <label class="extra-small fw-bold text-uppercase d-block mb-1">Check-in / Check-out</label>
+                    <input type="text" id="booking-dates" class="form-control border-0 p-0 shadow-none bg-transparent" placeholder="Select dates">
+                  </div>
+                  <div class="col-12 p-3">
+                    <label class="extra-small fw-bold text-uppercase d-block mb-1">Guests</label>
+                    <div class="dropdown w-100">
+                      <button class="btn btn-link w-100 text-start text-dark text-decoration-none p-0 d-flex justify-content-between align-items-center shadow-none" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" id="guestsDropdown">
+                        <span id="guestDisplaySidebar">2 guests</span>
+                        <i class="bi bi-chevron-down small"></i>
+                      </button>
+                      <div class="dropdown-menu w-100 p-4 shadow-lg border-0 rounded-4">
+                        <!-- Adult row -->
+                        <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+                          <div>
+                            <div class="fw-bold">Adults</div>
+                            <div class="text-muted small">Ages 13 or above</div>
+                          </div>
+                          <div class="counter-control d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus" data-type="adults"><i class="bi bi-dash"></i></button>
+                            <span class="mx-3 fw-bold count-val" id="count-adults-sidebar">2</span>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus" data-type="adults"><i class="bi bi-plus"></i></button>
+                          </div>
+                        </div>
+                        <!-- Children row -->
+                        <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+                          <div>
+                            <div class="fw-bold">Children</div>
+                            <div class="text-muted small">Ages 2 – 12</div>
+                          </div>
+                          <div class="counter-control d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus" data-type="children"><i class="bi bi-dash"></i></button>
+                            <span class="mx-3 fw-bold count-val" id="count-children-sidebar">0</span>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus" data-type="children"><i class="bi bi-plus"></i></button>
+                          </div>
+                        </div>
+                        <!-- Infants row -->
+                        <div class="guest-row d-flex align-items-center justify-content-between mb-4">
+                          <div>
+                            <div class="fw-bold">Infants</div>
+                            <div class="text-muted small">Under 2</div>
+                          </div>
+                          <div class="counter-control d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus" data-type="infants"><i class="bi bi-dash"></i></button>
+                            <span class="mx-3 fw-bold count-val" id="count-infants-sidebar">0</span>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus" data-type="infants"><i class="bi bi-plus"></i></button>
+                          </div>
+                        </div>
+                        <!-- Pets row -->
+                        <div class="guest-row d-flex align-items-center justify-content-between">
+                          <div>
+                            <div class="fw-bold">Pets</div>
+                            <div class="text-muted small"><a href="#" class="text-decoration-underline text-muted">Bringing a service animal?</a></div>
+                          </div>
+                          <div class="counter-control d-flex align-items-center">
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn minus" data-type="pets"><i class="bi bi-dash"></i></button>
+                            <span class="mx-3 fw-bold count-val" id="count-pets-sidebar">0</span>
+                            <button type="button" class="btn btn-outline-secondary rounded-circle btn-sm counter-btn plus" data-type="pets"><i class="bi bi-plus"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold mb-3 shadow-none">Reserve Room</button>
+              <p class="text-center text-muted extra-small mb-3">You won't be charged yet</p>
+
+              <div class="price-breakdown mb-0">
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted small">$299 x <span id="nightCount">4</span> nights</span>
+                  <span class="small">$1,196</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span class="text-muted small">Service fee</span>
+                  <span class="small">$42</span>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between">
+                  <span class="fw-bold">Total</span>
+                  <span class="fw-bold">$1,238</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Rooms -->
+  <section class="related-rooms py-5 border-top overflow-hidden">
+    <div class="container-fluid px-md-5">
+      <div class="d-flex justify-content-between align-items-center mb-5">
+        <h4 class="fw-bold mb-0">Other Rooms You Might Like</h4>
+        <div class="slick-arrows-custom d-flex gap-2">
+            <button class="btn btn-outline-dark rounded-circle slider-prev p-2 lh-1 shadow-none"><i class="bi bi-chevron-left"></i></button>
+            <button class="btn btn-outline-dark rounded-circle slider-next p-2 lh-1 shadow-none"><i class="bi bi-chevron-right"></i></button>
+        </div>
+      </div>
+      
+      <div class="related-rooms-slider row g-4">
+        <!-- Room Item 1 -->
+        <div class="px-2">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+                <div class="offer-image-wrapper position-relative">
+                    <img src="https://images.unsplash.com/photo-1596522354195-e84ae3c98731?auto=format&fit=crop&w=600&q=80" alt="Room" class="offer-img w-100">
+                    <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                    <div class="offer-badge early-deal">Flash Deal</div>
+                </div>
+                <div class="offer-content p-3">
+                    <h5 class="offer-title fw-bold mb-1">Classic Suite</h5>
+                    <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Maldives, Ocean</p>
+                    <div class="card-review-row">
+                        <div class="card-review-stars text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <div class="card-review-text">(4.8 · 85 reviews)</div>
+                    </div>
+                    <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                        <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                        <span>·</span>
+                        <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                    </div>
+                    <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                        <div class="offer-action-left">
+                            <div class="stay-info">
+                                <span class="stay-dates">04/10 - 04/15</span>
+                                <span class="extra-small">5 nights, 2 adults</span>
+                            </div>
+                        </div>
+                        <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                            <div class="pricing-flex">
+                                <div class="price-old text-muted extra-small">$220</div>
+                                <div class="price-current fw-bold text-dark">$180</div>
+                            </div>
+                            <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Item 2 -->
+        <div class="px-2">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+                <div class="offer-image-wrapper position-relative">
+                    <img src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=600&q=80" alt="Room" class="offer-img w-100">
+                    <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                    <div class="offer-badge top-pick">Top Pick</div>
+                </div>
+                <div class="offer-content p-3">
+                    <h5 class="offer-title fw-bold mb-1">Executive Deluxe</h5>
+                    <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> London, UK</p>
+                    <div class="card-review-row">
+                        <div class="card-review-stars text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        </div>
+                        <div class="card-review-text">(4.7 · 42 reviews)</div>
+                    </div>
+                    <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                        <span><i class="bi bi-people me-1"></i> 3 Sleeps</span>
+                        <span>·</span>
+                        <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                    </div>
+                    <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                        <div class="offer-action-left">
+                            <div class="stay-info">
+                                <span class="stay-dates">05/02 - 05/05</span>
+                                <span class="extra-small">3 nights, 1 adult</span>
+                            </div>
+                        </div>
+                        <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                            <div class="pricing-flex">
+                                <div class="price-current fw-bold text-dark">$250</div>
+                            </div>
+                            <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Item 3 -->
+        <div class="px-2">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+                <div class="offer-image-wrapper position-relative">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&q=80" alt="Room" class="offer-img w-100">
+                    <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                    <div class="offer-badge new-luxury">New Luxury</div>
+                </div>
+                <div class="offer-content p-3">
+                    <h5 class="offer-title fw-bold mb-1">Royal Villa</h5>
+                    <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Santorini, Greece</p>
+                    <div class="card-review-row">
+                        <div class="card-review-stars text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <div class="card-review-text">(4.9 · 210 reviews)</div>
+                    </div>
+                    <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                        <span><i class="bi bi-people me-1"></i> 8 Sleeps</span>
+                        <span>·</span>
+                        <span><i class="bi bi-door-open me-1"></i> 4 Bed</span>
+                    </div>
+                    <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                        <div class="offer-action-left">
+                            <div class="stay-info">
+                                <span class="stay-dates">06/15 - 06/20</span>
+                                <span class="extra-small">5 nights, 4 adults</span>
+                            </div>
+                        </div>
+                        <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                            <div class="pricing-flex">
+                                <div class="price-current fw-bold text-dark">$380</div>
+                            </div>
+                            <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Item 4 -->
+        <div class="px-2">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+                <div class="offer-image-wrapper position-relative">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&q=80" alt="Room" class="offer-img w-100">
+                    <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                    <div class="offer-badge genius">Family Special</div>
+                </div>
+                <div class="offer-content p-3">
+                    <h5 class="offer-title fw-bold mb-1">Family Suite</h5>
+                    <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Orlando, USA</p>
+                    <div class="card-review-row">
+                        <div class="card-review-stars text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <div class="card-review-text">(4.6 · 15 reviews)</div>
+                    </div>
+                    <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                        <span><i class="bi bi-people me-1"></i> 6 Sleeps</span>
+                        <span>·</span>
+                        <span><i class="bi bi-door-open me-1"></i> 3 Bed</span>
+                    </div>
+                    <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                        <div class="offer-action-left">
+                            <div class="stay-info">
+                                <span class="stay-dates">07/20 - 07/25</span>
+                                <span class="extra-small">5 nights, 4 adults</span>
+                            </div>
+                        </div>
+                        <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                            <div class="pricing-flex">
+                                <div class="price-current fw-bold text-dark">$320</div>
+                            </div>
+                            <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Item 5 (Carousel Benefit) -->
+        <div class="px-2">
+            <div class="offer-card border-0 shadow-sm rounded-4 overflow-hidden h-100 bg-white">
+                <div class="offer-image-wrapper position-relative">
+                    <img src="https://images.unsplash.com/photo-1560448204-603b3fc33ddc?auto=format&fit=crop&w=600&q=80" alt="Room" class="offer-img w-100">
+                    <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+                </div>
+                <div class="offer-content p-3">
+                    <h5 class="offer-title fw-bold mb-1">Business Studio</h5>
+                    <p class="offer-location text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> Singapore City</p>
+                    <div class="card-review-row">
+                        <div class="card-review-stars text-warning">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+                        </div>
+                        <div class="card-review-text">(4.5 · 310 reviews)</div>
+                    </div>
+                    <div class="offer-features d-flex gap-2 text-muted extra-small mb-2">
+                        <span><i class="bi bi-people me-1"></i> 2 Sleeps</span>
+                        <span>·</span>
+                        <span><i class="bi bi-door-open me-1"></i> 1 Bed</span>
+                    </div>
+                    <div class="offer-footer d-flex justify-content-between align-items-end pt-3 border-top">
+                        <div class="offer-action-left">
+                            <div class="stay-info">
+                                <span class="stay-dates">08/10 - 08/12</span>
+                                <span class="extra-small">2 nights, 1 adult</span>
+                            </div>
+                        </div>
+                        <div class="offer-pricing-area d-flex flex-column align-items-end text-end">
+                            <div class="pricing-flex">
+                                <div class="price-old text-muted extra-small">$190</div>
+                                <div class="price-current fw-bold text-dark">$150</div>
+                            </div>
+                            <a href="#" class="view-deal-link text-decoration-none fw-bold extra-small text-danger">View deal <i class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-5 pb-5 pt-5">
+        <!-- Branding column -->
+        <div class="col-lg-4">
+          <a href="#" class="footer-logo">NICE<span>GUESTHOUSE</span></a>
+          <p class="text-white-50 mb-4 pe-lg-4">
+            Committed to serving you with our expert team members. Experience a touch of home and excellence in the
+            heart of Noakhali since 2007.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/NGHNOAKHALI" class="social-link" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.youtube.com/watch?v=2fpsh9s6ebM" class="social-link" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.tripadvisor.com/Hotel_Review-g6602003-d4764267-Reviews-Nice_Guest_House_Training_Hall_and_Dolna_Food_Heaven-Noakhali_Chittagong_Division.html" class="social-link" target="_blank"><i class="fa fa-tripadvisor"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Navigate</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms & Suites</a></li>
+            <li><a href="restaurant.html">Restaurants</a></li>
+            <li><a href="conference.html">Conference</a></li>
+          </ul>
+        </div>
+
+        <!-- Useful Links -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h5 class="footer-heading">Useful Info</h5>
+          <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div class="col-md-6 col-lg-4">
+          <h5 class="footer-heading">Stay Connected</h5>
+          <p class="text-white-50 mb-4">Subscribe to our newsletter for latest offers and news.</p>
+          <div class="input-group">
+            <input type="email" class="form-control bg-dark border-0 text-white" placeholder="Enter email"
+              style="padding: 12px 20px;">
+            <button class="btn btn-primary px-4" type="button">Join</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; 2026 Nice Guest House & Training Hall. All rights reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed for Excellence | Powered by <a href="#" class="text-white-50 text-decoration-none">NGH Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Review Modal (Airbnb Style) -->
+  <div class="modal fade review-full-modal" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content rounded-4 border-0 shadow-lg">
+        <div class="modal-header border-0 pb-0 px-4 pt-4">
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4 pb-4 pt-2">
+          <div class="row g-0 h-100">
+            <!-- Left Side: Ratings & Stats (Sticky on MD+) -->
+            <div class="col-lg-4 pe-lg-5 mb-5 mb-lg-0 border-end-lg h-100 sticky-lg-top">
+              <div class="rating-sidebar">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <i class="bi bi-star-fill text-dark fs-2"></i>
+                  <h2 class="fw-bold mb-0">4.92</h2>
+                </div>
+                <p class="text-muted mb-4">Top 1% of homes based on ratings, reviews, and reliability</p>
+                
+                <div class="overall-rating-bars mb-5">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <span class="small fw-bold" style="width: 15px;">5</span>
+                    <div class="progress flex-grow-1" style="height: 6px;">
+                      <div class="progress-bar bg-dark" style="width: 90%;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <span class="small fw-bold" style="width: 15px;">4</span>
+                    <div class="progress flex-grow-1" style="height: 6px;">
+                      <div class="progress-bar bg-dark" style="width: 8%;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <span class="small fw-bold" style="width: 15px;">3</span>
+                    <div class="progress flex-grow-1" style="height: 6px;">
+                      <div class="progress-bar bg-dark" style="width: 2%;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <span class="small fw-bold" style="width: 15px;">2</span>
+                    <div class="progress flex-grow-1" style="height: 6px;">
+                      <div class="progress-bar bg-dark" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-3">
+                    <span class="small fw-bold" style="width: 15px;">1</span>
+                    <div class="progress flex-grow-1" style="height: 6px;">
+                      <div class="progress-bar bg-dark" style="width: 0%;"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="category-ratings">
+                  <div class="py-3 border-top d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="bi bi-stars fs-5"></i>
+                      <span class="small">Cleanliness</span>
+                    </div>
+                    <span class="small fw-bold">4.9</span>
+                  </div>
+                  <div class="py-3 border-top d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="bi bi-check-circle fs-5"></i>
+                      <span class="small">Accuracy</span>
+                    </div>
+                    <span class="small fw-bold">5.0</span>
+                  </div>
+                  <div class="py-3 border-top d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="bi bi-chat-dots fs-5"></i>
+                      <span class="small">Communication</span>
+                    </div>
+                    <span class="small fw-bold">4.9</span>
+                  </div>
+                  <div class="py-3 border-top d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="bi bi-geo-alt fs-5"></i>
+                      <span class="small">Location</span>
+                    </div>
+                    <span class="small fw-bold">4.8</span>
+                  </div>
+                  <div class="py-3 border-top d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-3">
+                      <i class="bi bi-tag fs-5"></i>
+                      <span class="small">Value</span>
+                    </div>
+                    <span class="small fw-bold">4.9</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: Review Feed -->
+            <div class="col-lg-8 ps-lg-5">
+              <div class="modal-review-feed">
+                <div class="sticky-top bg-white pt-2 pb-4 mb-2 z-3">
+                  <h3 class="fw-bold mb-4">128 reviews</h3>
+                  <div class="search-reviews position-relative">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                    <input type="text" class="form-control rounded-pill ps-5 py-3 shadow-none border-secondary-subtle" placeholder="Search reviews">
+                  </div>
+                </div>
+
+                <div class="reviews-list">
+                  <!-- Sample Review Item -->
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="https://i.pravatar.cc/150?u=1" class="rounded-circle me-3" width="48" height="48" alt="Avatar">
+                      <div>
+                        <h6 class="fw-bold mb-0">Son</h6>
+                        <div class="text-muted extra-small">San Jose, California</div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <div class="stars extra-small">
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                      </div>
+                      <span class="extra-small text-muted">· 1 week ago · Stayed with kids</span>
+                    </div>
+                    <p class="text-muted small mb-3">I spent a couple of days at this place, and we had a great time. Pricing: Comfortable for a family of four. Location: Next to the train station, but quiet.</p>
+                    
+                    <!-- Host Response -->
+                    <div class="host-response p-3 rounded-3 bg-light-subtle border ms-4">
+                      <div class="d-flex align-items-center mb-2">
+                        <img src="assets/img/logo/logo2.png" class="rounded-circle me-2" width="24" height="24" alt="Host">
+                        <h6 class="extra-small fw-bold mb-0">Response from Nice Guest House</h6>
+                      </div>
+                      <p class="extra-small text-muted mb-0">Thank you for your detailed review! I'm glad to hear that your family had a great time.</p>
+                    </div>
+                  </div>
+
+                  <!-- More reviews... -->
+                  <div class="mb-5">
+                    <div class="d-flex align-items-center mb-3">
+                      <img src="https://i.pravatar.cc/150?u=2" class="rounded-circle me-3" width="48" height="48" alt="Avatar">
+                      <div>
+                        <h6 class="fw-bold mb-0">Emma</h6>
+                        <div class="text-muted extra-small">London, UK</div>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                      <div class="stars extra-small">
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                        <i class="bi bi-star-fill text-dark"></i>
+                      </div>
+                      <span class="extra-small text-muted">· 2 weeks ago</span>
+                    </div>
+                    <p class="text-muted small mb-0">Fantastic stay! The infinity villa is exactly as pictured. Very clean and modern.</p>
+                  </div>
+                  
+                  <div class="mb-5 text-center">
+                    <div class="spinner-border spinner-border-sm text-secondary" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Amenities Modal -->
+  <div class="modal fade" id="amenitiesModal" tabindex="-1" aria-labelledby="amenitiesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content border-0 rounded-4 shadow">
+        <div class="modal-header border-bottom-0 pb-0 px-4 pt-4">
+          <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 pt-3">
+          <h4 class="fw-bold mb-4" id="amenitiesModalLabel">What this place offers</h4>
+          <div class="row g-4">
+            <!-- Scenic views -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Scenic views</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-water fs-5 text-muted"></i> <span class="text-dark">Ocean view</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-tree fs-5 text-muted"></i> <span class="text-dark">Garden view</span></div>
+              </div>
+            </div>
+            <!-- Bathroom -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Bathroom</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-droplet-half fs-5 text-muted"></i> <span class="text-dark">Bathtub</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-wind fs-5 text-muted"></i> <span class="text-dark">Hair dryer</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-bag-plus fs-5 text-muted"></i> <span class="text-dark">Cleaning products</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-basket fs-5 text-muted"></i> <span class="text-dark">Shampoo and Conditioner</span></div>
+              </div>
+            </div>
+            <!-- Bedroom & laundry -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Bedroom and laundry</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-layout-text-window-reverse fs-5 text-muted"></i> <span class="text-dark">Washer</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-layers fs-5 text-muted"></i> <span class="text-dark">Dryer</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-file-text fs-5 text-muted"></i> <span class="text-dark">Towels, bed sheets, soap, and toilet paper</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-columns-gap fs-5 text-muted"></i> <span class="text-dark">Extra pillows and blankets</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-eyeglasses fs-5 text-muted"></i> <span class="text-dark">Room-darkening shades</span></div>
+              </div>
+            </div>
+            <!-- Entertainment -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Entertainment</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-tv fs-5 text-muted"></i> <span class="text-dark">55" HDTV with Netflix</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-speaker fs-5 text-muted"></i> <span class="text-dark">Bluetooth sound system</span></div>
+              </div>
+            </div>
+            <!-- Heating & cooling -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Heating and cooling</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-snow fs-5 text-muted"></i> <span class="text-dark">AC - split type ductless system</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-fan fs-5 text-muted"></i> <span class="text-dark">Ceiling fan</span></div>
+              </div>
+            </div>
+            <!-- Internet -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Internet and office</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-wifi fs-5 text-muted"></i> <span class="text-dark">Fast Wi-Fi – 300 Mbps</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-pc-display fs-5 text-muted"></i> <span class="text-dark">Dedicated workspace</span></div>
+              </div>
+            </div>
+            <!-- Kitchen -->
+            <div class="col-12">
+              <h6 class="fw-bold mb-3">Kitchen and dining</h6>
+              <div class="d-flex flex-column gap-3 mb-4">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-cup-hot fs-5 text-muted"></i> <span class="text-dark">Kitchen</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-box-seam fs-5 text-muted"></i> <span class="text-dark">Refrigerator</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-fire fs-5 text-muted"></i> <span class="text-dark">Microwave</span></div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3"><i class="bi bi-cup fs-5 text-muted"></i> <span class="text-dark">Coffee maker: Nespresso</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Off-canvas Menu -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+    <div class="offcanvas-header border-bottom">
+      <div class="offcanvas-title" id="offcanvasMenuLabel">
+        <img src="assets/img/logo/logo-2.png" alt="Logo" class="offcanvas-logo" style="height: 40px;">
+      </div>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body p-0">
+      <div class="p-3 border-bottom" id="mobile-auth-section">
+        <div class="row g-2">
+          <div class="col-6">
+            <a href="signup.html" class="btn btn-primary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-person-plus me-1"></i> Sign Up
+            </a>
+          </div>
+          <div class="col-6">
+            <a href="signin.html" class="btn btn-outline-secondary rounded-pill w-100 btn-sm py-2">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Log In
+            </a>
+          </div>
+        </div>
+      </div>
+      <ul class="nav flex-column menu-list">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html"><i class="bi bi-house-door me-2"></i> Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="conference.html"><i class="bi bi-building me-2"></i> Conference Hall</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="rooms.html"><i class="bi bi-door-closed me-2"></i> Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="restaurant.html"><i class="bi bi-egg-fried me-2"></i> Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="our-clients.html"><i class="bi bi-people me-2"></i> Our Honorable Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="gallery.html"><i class="bi bi-images me-2"></i> Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html"><i class="bi bi-envelope me-2"></i> Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html"><i class="bi bi-info-circle me-2"></i> About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+            href="#mobileLangMenu" role="button" aria-expanded="false" aria-controls="mobileLangMenu">
+            <span><i class="bi bi-translate me-2"></i> Language</span>
+            <i class="bi bi-chevron-down small"></i>
+          </a>
+          <div class="collapse" id="mobileLangMenu">
+            <ul class="nav flex-column bg-light ps-4">
+              <li class="nav-item">
+                <a class="nav-link py-2" href="#">
+                  <img src="https://flagcdn.com/w40/gb.png" alt="English" class="lang-flag me-2"> English
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="#">
+                  <img src="https://flagcdn.com/w40/bd.png" alt="Bengali" class="lang-flag me-2"> Bengali
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-2" href="#">
+                  <img src="https://flagcdn.com/w40/in.png" alt="Hindi" class="lang-flag me-2"> Hindi
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item" id="mobile-signout-item" style="display:none;">
+          <a class="nav-link text-danger fw-bold" id="mobileSignOut" href="#"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  
+  <!-- PhotoSwipe v5 JS -->
+  <script type="module">
+    import PhotoSwipeLightbox from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe-lightbox.esm.min.js';
+    import PhotoSwipe from 'https://cdn.jsdelivr.net/npm/photoswipe@5.4.3/dist/photoswipe.esm.min.js';
+
+    window.PhotoSwipeLightbox = PhotoSwipeLightbox;
+    window.PhotoSwipe = PhotoSwipe;
+  </script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/room-details.js"></script>
+</body>
+
+</html>

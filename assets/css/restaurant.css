@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Restaurant Page Styles - Multi-Branch Dining
+   ========================================================================== */
+
+.restaurant-hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.restaurant-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.restaurant-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    max-width: 900px;
+}
+
+.restaurant-hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.restaurant-hero-tagline {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.dining-grid {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+    padding-bottom: 80px;
+}
+
+.dining-card-premium {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.dining-card-premium:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.dining-image-wrapper {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.dining-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.dining-card-premium:hover .dining-card-img {
+    transform: scale(1.1);
+}
+
+.dining-card-content {
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.dining-card-content h3 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--text-dark-alt);
+    margin-bottom: 1rem;
+}
+
+.dining-branch-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary-brand);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.menu-highlight {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-brand);
+    font-size: 1.2rem;
+}
+
+.menu-text h6 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.menu-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.booking-btn-dining {
+    background: var(--primary-brand);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.booking-btn-dining:hover {
+    background: #c98a2b;
+    transform: scale(1.05);
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(224, 161, 60, 0.3);
+}
+
+/* Cuisine Cards */
+.cuisine-grid {
+    padding: 80px 0;
+}
+
+.cuisine-card {
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.cuisine-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+    border-color: var(--primary-brand);
+}
+
+.cuisine-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.cuisine-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.cuisine-card:hover .cuisine-img-wrapper img {
+    transform: scale(1.15);
+}
+
+.cuisine-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.cuisine-card:hover .cuisine-img-overlay {
+    opacity: 1;
+}
+
+.cuisine-card-content {
+    padding: 1.5rem 1.5rem 2rem;
+    text-align: left;
+}
+
+.cuisine-card h4 {
+    font-weight: 800;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--text-dark-alt);
+    position: relative;
+    display: inline-block;
+}
+
+.cuisine-card h4::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 30px;
+    height: 3px;
+    background: var(--primary-brand);
+    transition: width 0.4s ease;
+}
+
+.cuisine-card:hover h4::after {
+    width: 50px;
+}
+
+.cuisine-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.cuisine-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    padding-top: 1.5rem;
+}
+
+.cuisine-menu-list li {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cuisine-card:hover .cuisine-menu-list li {
+    transform: translateX(5px);
+}
+
+.cuisine-menu-list li i {
+    color: var(--primary-brand);
+    font-size: 0.75rem;
+}
+
+/* Rooftop Section */
+.rooftop-section {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+    padding: 120px 0;
+    color: #fff;
+    text-align: center;
+}
+
+/* Feature List */
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-list li {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+}
+
+.feature-list li i {
+    color: var(--primary-brand);
+    font-size: 1.5rem;
+}
+/* Sticky Reservation Sidebar */
+.sticky-reservation-sidebar {
+    position: sticky;
+    top: 120px;
+    z-index: 100;
+}
+
+.reservation-card {
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Select2 Customization */
+.select2-container--default .select2-selection--single {
+    border: none !important;
+    background-color: #f8f9fa !important;
+    height: 45px !important;
+    border-radius: 12px !important;
+    display: flex;
+    align-items: center;
+    padding: 0 15px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 45px !important;
+    right: 10px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--text-dark-alt) !important;
+    padding: 0 !important;
+    font-size: 0.85rem;
+    line-height: normal !important;
+}
+
+
+
+/* Flatpickr Customization */
+.flatpickr-input {
+    background-color: #f8f9fa !important;
+    height: 45px !important;
+    font-size: 0.9rem !important;
+}
+
+.input-group-text {
+    color: var(--primary-brand);
+    font-size: 1.1rem;
+    height: 45px !important;
+}
+
+/* Custom rounded corners for inputs */
+.rounded-4 {
+    border-radius: 12px !important;
+    height: 45px !important;
+    font-size: 0.9rem !important;
+}
+
+.select2-dropdown {
+    border: none !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 16px !important;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: var(--primary-brand) !important;
+}
+
+/* Flatpickr Image-matching Customization */
+.flatpickr-calendar {
+    background: #fff !important;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 10px !important;
+    width: 100%;
+}
+
+.flatpickr-months {
+    padding: 10px 0 !important;
+}
+
+.flatpickr-month {
+    background: transparent !important;
+    color: #333 !important;
+    fill: #333 !important;
+}
+
+.flatpickr-current-month {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    font-weight: 700 !important;
+}
+
+/* Matching the "March 2026" layout from image */
+.flatpickr-monthDropdown-months {
+    background: #f8f9fa !important;
+    border: 1px solid #eee !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    font-weight: 600 !important;
+}
+
+.cur-year {
+    font-size: 15px !important;
+    background: #f8f9fa !important;
+    border: 1px solid #eee !important;
+    border-radius: 10px !important;
+    padding: 5px 15px !important;
+    color: #ff5a5f !important; /* Reddish color for year from image */
+    font-weight: 700 !important;
+}
+
+.flatpickr-weekday {
+    color: #999 !important;
+    font-weight: 700 !important;
+}
+
+.flatpickr-day {
+    color: #444 !important;
+    border-radius: 50% !important;
+}
+
+.flatpickr-day.today {
+    border-color: #ff5a5f !important;
+    color: #ff5a5f !important;
+}
+
+.flatpickr-day.selected {
+    background: var(--primary-brand) !important;
+    border-color: var(--primary-brand) !important;
+    color: #fff !important;
+}
+
+.flatpickr-day:hover {
+    background: #f0f0f0 !important;
+}
+
+.flatpickr-prev-month, .flatpickr-next-month {
+    padding: 15px !important;
+}
+
+.flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
+    fill: var(--primary-brand) !important;
+}
+
+.select2-results__option {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+}
+.flatpickr-wrapper{
+    width: 100%;
+}
+
+@media (max-width: 991px) {
+    .sticky-reservation-sidebar {
+        position: static;
+        margin-top: 40px;
+    }
+}
+

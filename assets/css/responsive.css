@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Responsive Styles for Nice Guest House
+   ========================================================================== */
+
+/* Large Desktop (max-width: 1200px) */
+@media (max-width: 1200px) {
+    .premium-title {
+        font-size: 4.5rem;
+    }
+}
+
+/* Tablet & Smaller Desktop (max-width: 991px) */
+@media (max-width: 991px) {
+    /* .offers-slider .slick-next, .available-offers-slider .slick-next{
+        right: 16px;
+    }
+    .offers-slider .slick-prev, .available-offers-slider .slick-prev{
+        left: 16px;
+    } */
+     .hero-search-container{
+        margin-top: 50px;
+     }
+    .offers-slider .slick-prev {
+        left: 5px;
+    }
+
+    .offers-slider .slick-next {
+        right: 5px;
+    }
+
+    .premium-title {
+        font-size: 4rem;
+    }
+
+    .overlapping-image-container {
+        margin-top: 4rem;
+        padding: 0;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .secondary-image {
+        bottom: -10%;
+        right: 0;
+    }
+    .results-header {
+    margin-top: 20px;
+}
+.booking-card .flatpickr-calendar{
+    
+    position: fixed !important;
+}
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .hero-section {
+        /* height: auto; */
+        padding-bottom: 25px;
+    }
+.btnviewmore{
+    display: none !important;
+}
+    .hero-content {
+        margin-top: 45px !important;
+    }
+
+    .hero-btns {
+        /* display: none !important; */
+    }
+
+    .hero-text-slider {
+        margin-bottom: 1rem;
+    }
+
+    .search-submit-btn {
+        height: 35px;
+    }
+
+    .search-submit-btn:hover {
+        background-color: #d64036 !important;
+        transform: scale(1) !important;
+        font-size: 14px;
+        border-radius: 50px !important;
+        margin-top: 10px;
+    }
+
+    .search-input-field,
+    .search-subtext {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .hero-search-container {
+        flex-direction: column;
+        border-radius: 20px !important;
+        padding: 15px !important;
+    }
+
+    .search-divider {
+        display: none;
+    }
+
+    .search-item {
+        width: 100%;
+        text-align: center !important;
+        padding: 10px;
+    }
+
+    .search-submit-btn {
+        width: 100%;
+        border-radius: 50px !important;
+        margin-top: 10px;
+    }
+
+    /* Ensure Calendar appears above the modal */
+    .flatpickr-calendar {
+        z-index: 10005 !important;
+        top: 50% !important; /* Center calendar vertically */
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        position: fixed !important; /* Fixed to window, not wrapper */
+    }
+
+    /* Ensure location/guest panels appear above everything in modal */
+    .search-panel {
+        z-index: 10002 !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        position: fixed !important;
+        width: 90vw !important;
+        max-width: 400px !important;
+    }
+
+    /* Rooms page adjustments */
+    .showing-text-mobile {
+        font-size: 14px;
+    }
+
+    .location-panel,
+    .guest-panel {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%) !important;
+    }
+
+    /* Responsive Flatpickr Styling */
+    .flatpickr-calendar {
+        width: 90% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        min-width: unset !important;
+    }
+/* .flatpickr-calendar.open {
+    position: fixed !important;
+    top: 73px !important;} */
+    .conference-icon {
+        font-size: 3rem;
+    }
+
+    .conference-title {
+        font-size: 1.2rem;
+    }
+
+    .map-section iframe {
+        height: 350px;
+    }
+
+    .hero-search-wrapper {
+        display: none;
+    }
+
+    body.search-modal-open {
+        overflow: hidden;
+    }
+
+    body.search-modal-open .hero-search-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(2px);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    body.search-modal-open .hero-search-wrapper {
+        display: block;
+        position: static;
+        width: 100%;
+        margin-top: 0 !important;
+    }
+
+    body.search-modal-open .hero-search-container {
+        flex-direction: column;
+        border-radius: 1.5rem !important;
+        background: #fff;
+        padding: 1.5rem 1.5rem !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
+        width: 100%;
+        max-width: 400px;
+        position: relative;
+    }
+
+    body.search-modal-open .search-item {
+        width: 100%;
+        text-align: left !important;
+        padding: 0.75rem 0.5rem;
+        border-bottom: 1px solid #eee;
+        border-radius: 0;
+    }
+    
+    body.search-modal-open .search-label {
+        font-size: 0.75rem;
+        font-weight: 800;
+        margin-bottom: 2px;
+        text-transform: uppercase;
+    }
+
+    body.search-modal-open .search-input-field,
+    body.search-modal-open .search-subtext {
+        font-size: 14px;
+        color: #6c757d;
+        font-weight: 400 !important;
+        text-align: center;
+        display: block;
+        width: 100%;
+    }
+    
+    body.search-modal-open .search-item:last-of-type {
+        border-bottom: none;
+    }
+
+    body.search-modal-open .search-divider {
+        display: none;
+    }
+
+    body.search-modal-open .search-submit-btn {
+        width: 100%;
+        border-radius: 50px !important;
+        margin-top: 1.5rem;
+        height: 50px;
+    }
+
+    body.search-modal-open .mobile-search-close {
+        display: block !important;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        z-index: 10001;
+        width: 36px;
+        height: 36px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        opacity: 1;
+    }
+    
+    body.search-modal-open .mobile-search-close::before {
+        font-size: 1.5rem;
+    }
+    
+    body.search-modal-open .mobile-search-close.d-none {
+        display: block !important;
+    }
+
+    /* Refined Button Responsiveness */
+    .btn-modern {
+        max-width: 100%;
+        white-space: normal !important;
+        text-align: center;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        font-size: 16px;
+        /* Touch-friendly height */
+    }
+
+}
+
+/* Extra Small Devices (max-width: 576px) */
+@media (max-width: 576px) {
+    .premium-title {
+        font-size: 3rem;
+        letter-spacing: -1px;
+    }
+
+    /* Flatpickr Mobile Select2 Adjustments */
+    .flatpickr-calendar .select2-container {
+        margin: 0 !important;
+        font-family: inherit;
+    }
+
+    .flatpickr-calendar .select2-container--default .select2-selection--single {
+        border: none !important;
+        background: transparent !important;
+        height: auto;
+        padding: 5px;
+    }
+
+    .flatpickr-calendar .select2-container--default .select2-selection--single .select2-selection__rendered {
+        color: #222 !important;
+        font-family: var(--font-main, 'Poppins', sans-serif) !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+        line-height: normal;
+        padding-right: 20px;
+    }
+
+    .flatpickr-calendar .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 100%;
+        top: 0;
+        right: 0;
+    }
+
+    .select2-container--open {
+        z-index: 10006 !important; /* Higher than flatpickr modal */
+    }
+
+    /* Adjust flatpickr header flex to fit select2 */
+    .flatpickr-month {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .flatpickr-current-month {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+        width: auto !important;
+        position: static !important;
+    }
+    
+    .flatpickr-current-month .numInputWrapper {
+        width: 6ch !important;
+    }
+}
+
+@media (max-width: 350px) {
+    .showing-text-mobile {
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Global Theme Variables & Base Styles (Nice Guest House)
+   ========================================================================== */
+
+:root {
+    /* --- Core Brand Colors --- */
+    --primary-brand: #f76156;
+    --primary-red: #f76156;
+    --primary-dark: #d64036;
+    --primary-glow: rgba(247, 97, 86, 0.4);
+    --secondary-blue: #0067ff;
+    --accent-gold: #c98a2b;
+    --accent-gold-light: #e0a13c;
+
+    /* --- Neutral Palette --- */
+    --text-dark: #1a1a1a;
+    --text-dark-alt: #2a2a2e;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --text-light: #999999;
+    --bg-white: #ffffff;
+    --bg-light: #ffffff;
+    --bg-body: #ffffff;
+
+    /* --- Borders & Accents --- */
+    --border-light: rgba(0, 0, 0, 0.05);
+    --border-medium: rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 15px 45px rgba(0, 0, 0, 0.15);
+
+    /* --- Typography --- */
+    --font-main: 'Poppins', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+
+    /* --- Typography Sizes --- */
+    --fs-xs: 0.75rem;
+    --fs-sm: 0.875rem;
+    --fs-base: 1rem;
+    --fs-md: 1.125rem;
+    --fs-lg: 1.25rem;
+    --fs-xl: 1.5rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 2.5rem;
+    --fs-display: 3.5rem;
+
+    /* --- Spacing Tokens --- */
+    --sp-1: 0.25rem;
+    --sp-2: 0.5rem;
+    --sp-3: 0.75rem;
+    --sp-4: 1rem;
+    --sp-5: 1.5rem;
+    --sp-6: 2rem;
+    --sp-8: 3rem;
+    --sp-10: 4rem;
+
+    /* --- Layout Tokens --- */
+    --navbar-height: 80px;
+    --navbar-scrolled-height: 65px;
+    --container-padding: 1.5rem;
+    --section-padding: 80px;
+
+    /* --- Transitions --- */
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-fast: all 0.2s ease;
+}
+
+/* ==================== Global Reset & Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    background-color: var(--bg-body);
+    line-height: 1.6;
+}
+
+/* Ensure only body handles horizontal overflow to preserve sticky behavior */
+/* body {
+    overflow-x: clip; 
+} */
+/* --- Global Utilities (Themed) --- */
+.text-primary {
+    color: var(--primary-brand) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-brand) !important;
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.transition-all {
+    transition: var(--transition-smooth);
+}
+/* ==================== Button Overrides ==================== */
+.btn-primary {
+    background-color: var(--primary-brand) !important;
+    border-color: var(--primary-brand) !important;
+    transition: var(--transition-smooth) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--primary-glow) !important;
+}
+
+/* ==================== Modern Button Hover Effects ==================== */
+.btn-modern {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    font-weight: 500 !important;
+    transition: var(--transition-smooth) !important;
+}
+
+/* ==================== Typography Styling ==================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+    text-transform: capitalize;
+}
+
+/* ==================== Scroll Top ==================== */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-red);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 1000;
+    opacity: 0.8;
+}
+
+.scroll-top:hover {
+    opacity: 1;
+    color: white;
+}
+
+/* ==================== Global Utilities ==================== */
+.title-divider {
+    width: 60px;
+    height: 4px;
+    background: var(--primary-brand);
+    border-radius: 2px;
+    margin-top: 1rem;
+}
+
+.ls-2 {
+    letter-spacing: 2px;
+}

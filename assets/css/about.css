@@ -1,0 +1,236 @@
+/* About Page Specific Styles */
+
+.about-hero {
+    position: relative;
+    height: 65vh;
+    min-height: 500px;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.about-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.about-hero > div {
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-top: 10px;
+}
+
+.about-hero-tagline {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: block;
+}
+
+/* Info Cards */
+.info-card {
+    background: white;
+    padding: 3.5rem;
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+    height: 100%;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid rgba(0,0,0,0.03);
+    position: relative;
+}
+
+.info-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+    border-color: var(--primary-brand);
+}
+
+.info-icon-box {
+    width: 90px;
+    height: 90px;
+    background: rgba(247, 97, 86, 0.08);
+    color: var(--primary-brand);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.info-card:hover .info-icon-box {
+    background: var(--primary-brand);
+    color: white !important;
+    transform: rotate(10deg);
+}
+
+.info-card:hover .info-icon-box i {
+    color: white !important;
+}
+
+/* Chairman Section */
+.chairman-section {
+    background: #fff;
+    padding: 120px 0;
+}
+
+.chairman-card {
+    background: white;
+    border-radius: 24px;
+    padding: 80px;
+    box-shadow: 0 30px 90px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.chairman-quote-icon {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    font-size: 6rem;
+    color: rgba(247, 97, 86, 0.05);
+}
+
+.chairman-img-wrapper {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+}
+
+.chairman-signature {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-top: 2.5rem;
+    display: block;
+    background: linear-gradient(45deg, var(--text-dark), var(--primary-brand));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Stats */
+.about-stats {
+    background: var(--dark-color);
+    color: white;
+    padding: 100px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--primary-brand);
+    display: block;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* Stats Section (Top Overlap) */
+.stats-section {
+    margin-top: -100px;
+    position: relative;
+    z-index: 10;
+}
+
+.stat-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.stat-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary-brand);
+    box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+}
+
+.stat-icon {
+    font-size: 2.8rem;
+    color: var(--primary-brand);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    transition: all 0.4s ease;
+}
+
+.stat-card:hover .stat-icon {
+    transform: scale(1.1);
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark-alt);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+/* Content Blocks */
+.content-block {
+    padding: 80px 0;
+}
+
+.service-highlight {
+    padding: 50px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #1a237e, #0d47a1);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-highlight-pattern {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+@media (max-width: 991px) {
+    .chairman-card {
+        padding: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .about-hero-title {
+        font-size: 2.5rem;
+    }
+}
